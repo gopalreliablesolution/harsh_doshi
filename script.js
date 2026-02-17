@@ -1,4 +1,4 @@
-const menuToggle = document.getElementById("menuToggle");
+// const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
 if (menuToggle && mobileMenu) {
