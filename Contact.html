@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://db.onlinewebfonts.com/c/9fb2d6d50ff8148a2c5dd6d21d8443cf?family=Arpona+Regular" rel="stylesheet">
+  <link rel="icon" type="image/png" href="footer-logo.ico">
+  <link rel="shortcut icon" href="footer-logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="shopping-bag.js"></script>
+  <!-- <script src="auth.js"></script> -->
+
+  <title>Shop Page</title>
+  <style>
+    /* Desktop Form Visibility */
+    .contact-content {
+      display: none;
+    }
+
+    .contact-content.active {
+      display: block;
+    }
+
+    .form-group {
+      display: grid !important;
+    }
+
+    /* Custom Dropdown Styling for Desktop */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      width: 100%;
+      border: 1px solid #ccc;
+      z-index: 20;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+
+    .dropdown-container.open .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-item {
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .dropdown-item:hover {
+      background: #f9f9f9;
+    }
+
+    /* Checkbox Alignment */
+    .custom-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-size: 0.8rem;
+    }
+
+    .nav-row a,
+    pre {
+      color: black !important;
+    }
+
+    .desktop-only {
+      display: flex;
+    }
+
+    .mobile-only {
+      display: none !important;
+    }
+
+    .mobile-section {
+      display: none;
+    }
+
+    .site-header.sticky {
+      background: white !important;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-only {
+        display: none;
+      }
+
+      .mobile-only {
+        display: flex !important;
+      }
+
+      .mobile-section {
+        padding-top: 9dvh;
+        display: unset;
+        height: fit-content;
+      }
+
+      .shop-section {
+        display: none;
+      }
+
+      .hero-content,
+      .hero-subtitle {
+        margin: 0;
+      }
+
+      .two-column-section .container {
+        padding: 0;
+      }
+
+      .two-column-section {
+        min-height: unset !important;
+        padding-top: 4.2rem;
+      }
+
+      .image-column img {
+        height: 45dvh;
+        width: 100vw;
+      }
+
+      .explore-collection {
+        margin-top: -5px;
+        background-color: #4E0004;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        padding: 0rem 40px;
+        min-height: 48.5dvh;
+      }
+
+      .hero-title {
+        display: flex;
+        color: white;
+        z-index: 10001;
+        font-family: "Arpona SemiBold";
+        text-shadow: unset;
+        margin-bottom: 0.3rem;
+        /*padding-left: 0.4rem;*/
+        color: white;
+        font-size: 1rem;
+        font-weight: unset;
+        letter-spacing: 1px;
+      }
+
+      .hero-subtitle {
+        font-family: "Arpona Light";
+        text-shadow: unset;
+        color: white;
+        font-size: 3.3vw;
+        line-height: 1.2rem;
+        /* margin-bottom: 1.5rem; */
+      }
+
+      .hero-link {
+        text-decoration: underline;
+        font-family: "Arpona Light";
+        text-align: center;
+        text-shadow: unset;
+        color: white;
+        line-height: 1rem;
+        font-size: 0.8rem;
+      }
+
+      .jewellery-content .hero-title {
+        display: block;
+      }
+
+      .newsletter {
+        border-top: unset;
+        padding: 50px 18px;
+      }
+
+      .images-carousel {
+        position: relative;
+        /* overflow: hidden; */
+        padding-bottom: 0;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /*gap: 0.75rem;*/
+        padding: 0.75rem;
+        padding-top: 20px;
+        padding-bottom: 5rem !important;
+      }
+
+      @media (min-width: 640px) {
+        .product-grid {
+          gap: 1rem;
+          padding: 1rem;
+        }
+      }
+
+      .product-card {
+        overflow: hidden;
+      }
+
+      .product-card a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .5s ease;
+      }
+
+      .product-card img:hover {
+        transform: scale(1.05);
+      }
+
+      .images-carousel {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 0;
+      }
+
+      .sticky-bar-wrapper {
+        /* position: relative;
+        height: 70px; */
+        display: none;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+
+      body {
+        min-height: 100dvh;
+      }
+
+      #stickyFooter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 6dvh;
+        z-index: 10;
+        display: none;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        display: flex;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        z-index: 10;
+        pointer-events: auto;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      #stickyFooter.fixed {
+        position: fixed;
+        bottom: 0;
+        top: auto !important;
+      }
+
+      .footer-button {
+        flex: 1;
+        padding: 0.8rem;
+        font-family: "Arpona Light", sans-serif;
+        font-weight: 600;
+        font-size: 1.8dvh;
+        letter-spacing: 1px;
+        background: white;
+        color: black;
+        border: none;
+        border-right: 1px solid #000;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .footer-button:last-child {
+        border-right: none;
+      }
+
+      .footer-button:hover {
+        background: #f0f0f0;
+      }
+
+      .back-menu-options {
+        margin: 0;
+      }
+
+      .filters {
+        flex-wrap: unset;
+      }
+
+      .mobile-menu {
+        max-height: 100dvh;
+        overflow-y: auto;
+      }
+
+      .accordion-container {
+        display: flex;
+        flex-direction: column;
+        padding: 0 40px;
+        min-height: 94dvh;
+        padding-top: 4rem;
+        margin: 0 auto;
+        font-family: sans-serif;
+      }
+
+      .main-title {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .main-description {
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 0.9rem;
+        color: #555;
+      }
+
+      .accordion-header {
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: color 0.3s;
+      }
+
+      .accordion-header:hover {
+        color: #000;
+      }
+
+      .accordion-header .icon {
+        font-size: 1.5rem;
+        transition: transform 0.3s ease;
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+        opacity: 0;
+      }
+
+      .accordion-item.active .accordion-content {
+        max-height: 1000px;
+        opacity: 1;
+        transition: max-height 0.5s ease-in, opacity 0.3s ease-in;
+      }
+
+      .content-inner {
+        padding-bottom: 5rem;
+      }
+
+      .styled-form select {
+        width: 100%;
+        padding: 10px 0 !important;
+        padding-left: 0 !important;
+        padding-right: 20px !important;
+        /* Make room for arrow */
+        margin-bottom: 15px;
+        border: none;
+        border-bottom: 1px solid #000;
+        border-radius: 0;
+        box-sizing: border-box;
+        background: transparent;
+        font-size: 16px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        text-indent: 1px;
+        text-overflow: '';
+        outline: none;
+        background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Cpath%20fill%3D%22black%22%20d%3D%22M2%204l4%204%204-4%22%2F%3E%3C%2Fsvg%3E");
+        background-repeat: no-repeat;
+        background-position: right center;
+        background-size: 12px;
+      }
+
+      .styled-form input,
+      .styled-form textarea {
+        width: 100%;
+        padding: 10px 0 !important;
+        padding-left: 0 !important;
+        margin-bottom: 15px;
+        border: none;
+        border-bottom: 1px solid #000;
+        border-radius: 0;
+        box-sizing: border-box;
+        background: transparent;
+        font-size: 16px;
+        outline: none;
+      }
+
+      .styled-form button {
+        background: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      .dropdown-container {
+        position: relative;
+        margin-bottom: 15px;
+      }
+
+      .dropdown-toggle {
+        width: 100%;
+        padding: 10px;
+        text-align: left;
+        background: #fff;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .dropdown-options {
+        display: none;
+        position: absolute;
+        width: 100%;
+        background: #fff;
+        border: 1px solid #ccc;
+        z-index: 10;
+      }
+
+      .dropdown-container.open .dropdown-options {
+        display: block;
+      }
+
+      .dropdown-item {
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .dropdown-item:hover {
+        background: #f0f0f0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <!-- Normal layout -->
+    <div class="header-normal transparent">
+      <div class="logo">
+        <a href="index.html" style="color: inherit; text-decoration: none">HARSSH DOSHI
+        </a>
+      </div>
+      <div class="nav-row">
+        <div class="nav-left">
+          <a href="Love Mirage.html" style="white-space: nowrap">LOVE MIRAGE</a>
+          <a href="shop.html">JEWELLERY</a>
+        </div>
+        <div class="nav-right">
+          <!-- <div class="shopping-bag-icon" onclick="toggleShoppingBag()" style="color: black;">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,6h-3V4c0-2.209-1.791-4-4-4S9,1.791,9,4v2H6C4.895,6,4,6.895,4,8v12c0,2.209,1.791,4,4,4h8c2.209,0,4-1.791,4-4V8
+                    C20,6.895,19.105,6,18,6z M11,4c0-1.104,0.896-2,2-2s2,0.896,2,2v2h-4V4z M18,20c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2V8h3v2
+                    c0,0.552,0.448,1,1,1s1-0.448,1-1V8h4v2c0,0.552,0.448,1,1,1s1-0.448,1-1V8h3V20z" fill="currentColor"/>
+              </svg>
+            </div> -->
+
+          <div class="nav-item">
+            <a href="WORLD OF HARSSH DOSHI.html"><span style="white-space: nowrap">
+                <pre>OUR JAGAT</pre>
+              </span></a>
+            <!-- <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="menu-column">
+                  <ul>
+                    <li>
+                      <a href="WORLD OF HARSSH DOSHI.html"
+                        >WORLD OF HARSSH DOSHI</a
+                      >
+                    </li>
+                    <li><a href="OUR FILMS.html">OUR FILMS</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <a href="Contact.html">CONTACT</a>
+          <div class="shopping-bag-icon" onclick="toggleShoppingBag()">
+            <label style="font-size: 14px; font-family: 'Arpona Regular', sans-serif; color: #000;">CART<span
+                class="bag-count"></span></label>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky layout -->
+    <div class="sticky-layout">
+      <div class="nav-left">
+        <a href="Love Mirage.html">LOVE MIRAGE</a>
+        <a href="shop.html">JEWELLERY</a>
+      </div>
+      <div class="logo">
+        <a href="index.html" style="
+            color: inherit;
+            text-decoration: none;
+            font-size: 25px;
+            /* font-weight: bold; */
+          "><span style="white-space: nowrap; font-family: 'Aviano Flare';">HARSSH DOSHI</span></a>
+      </div>
+      <div class="nav-right">
+        <div class="shopping-bag-icon" onclick="toggleShoppingBag()" style="color: black;">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,6h-3V4c0-2.209-1.791-4-4-4S9,1.791,9,4v2H6C4.895,6,4,6.895,4,8v12c0,2.209,1.791,4,4,4h8c2.209,0,4-1.791,4-4V8
+                    C20,6.895,19.105,6,18,6z M11,4c0-1.104,0.896-2,2-2s2,0.896,2,2v2h-4V4z M18,20c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2V8h3v2
+                    c0,0.552,0.448,1,1,1s1-0.448,1-1V8h4v2c0,0.552,0.448,1,1,1s1-0.448,1-1V8h3V20z"
+              fill="currentColor" />
+          </svg>
+        </div>
+
+        <div class="nav-item">
+          <a href="WORLD OF HARSSH DOSHI.html"><span style="white-space: nowrap">
+              <pre>OUR JAGAT</pre>
+            </span></a>
+          <!-- <div class="mega-menu">
+            <div class="mega-menu-content">
+              <div class="menu-column">
+                <ul>
+                  <li>
+                    <a href="WORLD OF HARSSH DOSHI.html"
+                      >WORLD OF HARSSH DOSHI</a
+                    >
+                  </li>
+                  <li><a href="OUR FILMS.html">OUR FILMS</a></li>
+                </ul>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <a href="Contact.html">CONTACT</a>
+      </div>
+    </div>
+
+    <!-- Mobile toggle -->
+    <div class="mobile-toggle" id="menuToggle">
+      <img src="assets/menu.svg" alt="Menu Icon" />
+    </div>
+
+    <!-- Cart Toggle -->
+    <div class="cart-toggle" id="cartToggle" onclick="toggleShoppingBag()">
+      <img src="assets/cart.png" alt="Menu Icon" />
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <img class="close-button" src="assets/close.png" alt="Close Icon" id="closeMenuBtn"
+        onclick="document.getElementById('mobileMenu').classList.remove('active');">
+      <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+      <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+      <a href="shop.html">JEWELLERY</a>
+      <a href="Love Mirage.html">LOVE MIRAGE</a>
+      <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+      <a href="Contact.html">CONTACT</a>
+
+      <!-- Auth Links -->
+      <a href="login.html" id="mobileLoginLink">LOGIN / REGISTER</a>
+      <a href="account.html" id="mobileAccountLink" style="display: none;">MY ACCOUNT</a>
+      <a href="#" id="mobileLogoutLink" style="display: none;" onclick="handleLogout(event)">LOGOUT</a>
+
+      <div class="Mobile-text">
+        <a style="font-family: Arpona light, sans-serif">FIND A BOUTIQUE</a><br />
+        <a style="font-family: Arpona light, sans-serif">BOOK A VIRTUAL APPOINTMENT</a><br />
+        <a style="font-family: Arpona light, sans-serif">PR<span class="demo_bypass">/</span>PRESS ENQUIRES</a><br />
+        <a style="
+            font-family: Arpona light, sans-serif;
+            font-size: 15px;
+            text-decoration: underline;
+          ">Instagram</a>
+      </div>
+      <div class="Mobile-location" style="cursor: pointer;"
+        onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">
+        <p>SHOP IN: <span class="footerCountryName">COUNTRY NAME</span> <span class="footerCountryCurrency">$/EN</span>
+        </p>
+        <a href="javascript:void(0)">Change Location <span class="demo_bypass">/</span> Language</a>
+      </div>
+    </div>
+
+    <!-- Our Jagar Menu -->
+    <div class="mobile-menu" id="jagatMenu">
+      <img class="close-button" src="assets/close.png" alt="Close Icon" id="jagatCloseMenuBtn">
+      <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+      <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 95%; padding-top: 8%">
+        <span id="jagatMenuBackBtn" style="font-family: Arpona light, sans-serif; color: #000;">Back</span>
+        <a>OUR JAGAT</a>
+        <span style="display: hidden; color: transparent;"> Back </span>
+      </div>
+
+      <div class="back-menu-options">
+        <a href="WORLD OF HARSSH DOSHI.html">WORLD OF HARSSH DOSHI</a>
+        <a href="OUR FILMS.html">OUR FILMS</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Section -->
+  <section class="mobile-section">
+    <img src="assets/contact_us.webp"
+      style="height: 45dvh;width: 100%;object-fit: cover;object-position: 0% calc(0%);" />
+    <div class="explore-collection">
+      <div class="hero-content">
+        <p class="hero-subtitle" style="text-align: center;">
+          Should you desire information that you haven’t found
+          on the website or have any particular requests, you can
+          contact us in the manner you find most convenient. We
+          will be glad to respond and offer our assistance in the
+          shortest possible time.
+        </p>
+        <div>
+          <p style="text-align: center;">Contact Us</p>
+          <div class="arrow-down" style="padding-top: 2rem;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-container">
+      <div class="accordion-item active">
+        <div class="accordion-header">
+          <span>Email Us</span>
+        </div>
+        <div class="accordion-content">
+          <div class="content-inner">
+            <p class="description">
+              An expert assistant will get back to you within two working days.
+              Our customer service responds in English, Italian, and French.
+            </p>
+
+            <form class="styled-form">
+              <div class="form-group">
+                <label for="mobileTitle">Title</label>
+                <select id="mobileTitle" name="title" class="styled-select">
+                  <option value="">Select Title*</option>
+                  <option value="Mr.">Mr.</option>
+                  <option value="Ms.">Ms.</option>
+                  <option value="Mrs.">Mrs.</option>
+                </select>
+              </div>
+
+              <input type="text" placeholder="First Name*" required name="firstName">
+              <input type="text" placeholder="Last Name*" required name="lastName">
+
+              <!-- Country Dropdown (Mobile) -->
+              <div class="form-group">
+                <!-- <label for="mobileCountry">Country*</label> -->
+                <select id="mobileCountry" name="country" class="styled-select">
+                  <option value="">Select Country*</option>
+                </select>
+              </div>
+
+              <input type="email" placeholder="Email*" required name="email">
+
+              <div class="form-group">
+                <!-- <label for="mobileCountryCode">Country Code</label> -->
+                <select id="mobileCountryCode" name="countryCode" class="styled-select">
+                  <option value="">Select Code*</option>
+                </select>
+              </div>
+
+              <input type="text" placeholder="Phone*" name="phone">
+
+              <textarea rows="3" placeholder="Description*" required name="description"></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <div class="accordion-header">
+          <span>Book an Appointment</span>
+        </div>
+        <div class="accordion-content">
+          <div class="content-inner">
+            <p class="description">
+              Please fill in the form and our team will reach out to schedule your appointment.
+            </p>
+            <form class="styled-form">
+              <input type="text" placeholder="First Name*" required name="firstName">
+              <input type="text" placeholder="Last Name*" required name="lastName">
+              <input type="email" placeholder="Email*" required name="email">
+              <input type="date" required name="date">
+              <button type="submit">Book</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div style="height: calc(6rem - 10px);"></div>
+    </div>
+  </section>
+
+  <section id="collections" class="two-column-section desktop-only">
+    <div class="jewellery-container" style="width: 98vw;">
+      <div class="contact-left" style="padding-left: 3vw;">
+        <h4 class="title" style="font-weight: bolder;">CONTACT US</h4>
+        <p class="description">
+          Should you desire information that you haven’t found on the website or
+          have any particular requests, you can contact us in the manner you find
+          most convenient. We will be glad to respond and offer our assistance in
+          the shortest possible time.
+        </p>
+        <!-- <a class="navigation1" onclick="toggleContent('call')">Call Us</a> -->
+        <a class="navigation2" onclick="toggleContent('email')">Email Us</a>
+        <a class="navigation3" onclick="toggleContent('book')">Book an Appointment</a>
+      </div>
+
+      <div class="column image-column desktop-only" id="imagediv" style="display: block;">
+        <img src="assets/contact_us.webp" alt="Jewellery collection" />
+      </div>
+
+      <div class="contact-right image-active" id="contentdiv" style="display: none !important;">
+        <div class="contact-navigation">
+          <!-- <a href="#" class="navigation-link" data-target="call">Call Us</a> -->
+          <a href="#" class="navigation-link" data-target="email">Email Us</a>
+          <a href="#" class="navigation-link" data-target="book">Book an Appointment</a>
+        </div>
+        <!-- Default Image -->
+        <div id="default" class="active">
+          <img src="assets/contact_us.webp" alt="Jewellery Image">
+        </div>
+
+        <!-- Call Us
+        <div id="call" class="contact-content">
+          <h4 class="title">CALL US</h4>
+          <p class="description">To purchase a creation by phone, for personal advice on jewellery & watches or assistance
+            with your order:</p>
+          <p class="description">Mon-Fri: 9h - 20h<br>Sat: 9h - 19h<br>Sun: 10h - 18h30</p>
+          <p class="navigation4"><b>+00 0000000</b></p>
+        </div> -->
+
+        <!-- Email Us -->
+        <div id="email" class="contact-content">
+          <h4 class="title">EMAIL US</h4>
+          <p class="description">
+            An expert assistant will get back to you within two working days.
+            Our customer service responds in English, Italian, and French.
+          </p>
+
+          <form class="styled-form">
+            <div class="form-group">
+              <label for="desktopTitle">Title</label>
+              <select id="desktopTitle" name="title" class="styled-select" required>
+                <option value="">Select Title*</option>
+                <option value="Mr.">Mr.</option>
+                <option value="Ms.">Ms.</option>
+                <option value="Mrs.">Mrs.</option>
+              </select>
+            </div>
+
+            <input type="text" placeholder="First Name*" required name="firstName">
+            <input type="text" placeholder="Last Name*" required name="lastName">
+            <input type="email" placeholder="Email*" required name="email">
+
+            <!-- Country Dropdown (Desktop) -->
+            <div class="form-group">
+              <label for="desktopCountry">Country*</label>
+              <select id="desktopCountry" name="country" class="styled-select" required>
+                <option value="">Select Country*</option>
+              </select>
+            </div>
+
+            <!-- Country Code Dropdown -->
+            <div class="form-group">
+              <label for="desktopCountryCode">Country Code</label>
+              <select id="desktopCountryCode" name="countryCode" class="styled-select" required>
+                <option value="">Select Code*</option>
+              </select>
+            </div>
+
+            <input type="number" placeholder="Phone*" name="phone" required>
+
+            <!-- Contact Reason Dropdown -->
+            <div class="dropdown-container">
+              <button type="button" class="dropdown-toggle" required onclick="toggleDropdown(this)">
+                <span class="selected-text">Contact Reason*</span>
+                <span class="dropdown-arrow">
+                  <svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </button>
+              <div class="dropdown-content">
+                <div class="dropdown-item" onclick="selectOption(this)">Order Assistance</div>
+                <div class="dropdown-item" onclick="selectOption(this)">Product Inquiry</div>
+                <div class="dropdown-item" onclick="selectOption(this)">Other</div>
+              </div>
+            </div>
+
+            <textarea rows="3" placeholder="Description*" required name="description"></textarea>
+
+            <!-- Custom checkbox -->
+            <div class="custom-check">
+              <input type="checkbox" id="marketing" name="marketing" required>
+              <label for="marketing">
+                <span class="check-icon"></span>
+                I would also like to receive marketing information about products or services.
+              </label>
+            </div>
+
+            <button type="submit">Send</button>
+          </form>
+        </div>
+
+        <!-- Book an Appointment -->
+        <div id="book" class="contact-content">
+          <h4 class="title">BOOK AN APPOINTMENT</h4>
+          <p class="description">
+            Please fill in the form and our team will reach out to schedule your appointment.
+          </p>
+          <form class="styled-form">
+            <input type="text" placeholder="First Name*" required name="firstName">
+            <input type="text" placeholder="Last Name*" required name="lastName">
+            <input type="email" placeholder="Email*" required name="email">
+            <input type="date" required name="date">
+            <input type="time" required name="time">
+
+            <!-- Custom checkbox -->
+            <div class="custom-check">
+              <input type="checkbox" id="appointment-marketing" name="marketing">
+              <label for="appointment-marketing">
+                <span class="check-icon"></span>
+                I would also like to receive marketing information about products or services.
+              </label>
+            </div>
+
+            <button type="submit">Book</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const headers = document.querySelectorAll('.accordion-header');
+
+      headers.forEach(header => {
+        header.addEventListener('click', () => {
+          const item = header.parentElement;
+          const isActive = item.classList.contains('active');
+          document.querySelectorAll('.accordion-item').forEach(accItem => {
+            accItem.classList.remove('active');
+          });
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      const dropdowns = document.querySelectorAll('.dropdown-container');
+
+      dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        const options = dropdown.querySelectorAll('.dropdown-item');
+        const selectedText = dropdown.querySelector('.selected-text');
+
+        toggle.addEventListener('click', (e) => {
+          e.preventDefault(); // Prevent form submit
+          dropdown.classList.toggle('open');
+        });
+
+        options.forEach(option => {
+          option.addEventListener('click', () => {
+            selectedText.textContent = option.textContent;
+            dropdown.classList.remove('open');
+          });
+        });
+      });
+    });
+  </script>
+
+  <script src="country-selector.js"></script>
+  <script src="contact.js"></script>
+  <script src="script.js"></script>
+  <script src="header-loader.js"></script>
+</body>
+
+</html>

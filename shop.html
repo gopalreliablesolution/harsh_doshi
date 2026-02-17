@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://db.onlinewebfonts.com/c/9fb2d6d50ff8148a2c5dd6d21d8443cf?family=Arpona+Regular" rel="stylesheet">
+  <link rel="icon" type="image/png" href="footer-logo.ico">
+  <link rel="shortcut icon" href="footer-logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+  <script src="config.js?v=3"></script>
+  <script src="shopping-bag.js"></script>
+
+
+  <!-- <script src="auth.js"></script> -->
+  <script src="products-data.js"></script>
+  <!-- <script src="smooth-scroll.js"></script> -->
+
+  <title>Shop Page</title>
+
+  <style>
+    .nav-row a,
+    pre {
+      color: black !important;
+    }
+
+    .mobile-section {
+      display: none;
+    }
+
+    .site-header.sticky {
+      background: white !important;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-section {
+        display: unset;
+        height: fit-content;
+      }
+
+      .shop-section {
+        display: none;
+      }
+
+      .hero-content,
+      .hero-subtitle {
+        margin: 0;
+      }
+
+      .two-column-section .container {
+        padding: 0;
+      }
+
+      .two-column-section {
+        min-height: unset !important;
+        padding-top: 4.2rem;
+      }
+
+      .image-column img {
+        height: 45dvh;
+        width: 100vw;
+      }
+
+      .explore-collection {
+        background-color: #4E0004;
+      }
+
+      .hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        min-height: 47.9dvh;
+      }
+
+      .hero-title {
+        display: flex;
+        color: white;
+        z-index: 10001;
+        font-family: "Arpona SemiBold";
+        text-shadow: unset;
+        margin-bottom: 0.3rem;
+        /*padding-left: 0.4rem;*/
+        color: white;
+        font-size: 1rem;
+        font-weight: unset;
+        letter-spacing: 1px;
+      }
+
+      .hero-subtitle {
+        font-family: "Arpona Light";
+        text-shadow: unset;
+        color: white;
+        font-size: 3.3vw;
+        line-height: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-link {
+        text-decoration: underline;
+        font-family: "Arpona Light";
+        text-align: center;
+        text-shadow: unset;
+        color: white;
+        line-height: 1rem;
+        font-size: 0.8rem;
+      }
+
+      .jewellery-content .hero-title {
+        display: block;
+      }
+
+      .newsletter {
+        border-top: unset;
+        /* padding: 50px 18px; */
+      }
+
+      .images-carousel {
+        position: relative;
+        /* overflow: hidden; */
+        padding-bottom: 0;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /*gap: 0.75rem;*/
+        padding: 0.75rem;
+        padding-top: 20px;
+        padding-bottom: 5rem !important;
+      }
+
+      @media (min-width: 640px) {
+        .product-grid {
+          gap: 1rem;
+          padding: 1rem;
+        }
+      }
+
+      .product-card {
+        overflow: hidden;
+      }
+
+      .product-card a {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .product-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .5s ease;
+      }
+
+      .product-card img:hover {
+        transform: scale(1.05);
+      }
+
+      .images-carousel {
+        position: relative;
+        overflow: hidden;
+        padding-bottom: 0;
+      }
+
+      .sticky-bar-wrapper {
+        /* position: relative;
+        height: 70px; */
+        display: none;
+      }
+
+      html,
+      body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+
+      body {
+        min-height: 100dvh;
+      }
+
+      #stickyFooter {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 6dvh;
+        z-index: 10;
+        display: none;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(10px);
+        display: flex;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        z-index: 10;
+        pointer-events: auto;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      #stickyFooter.fixed {
+        position: fixed;
+        bottom: 0;
+        top: auto !important;
+      }
+
+      .footer-button {
+        flex: 1;
+        padding: 0.8rem;
+        font-family: "Arpona Light", sans-serif;
+        font-weight: 600;
+        font-size: 1.8dvh;
+        letter-spacing: 1px;
+        background: white;
+        color: black;
+        border: none;
+        border-right: 1px solid #000;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .footer-button:last-child {
+        border-right: none;
+      }
+
+      .footer-button:hover {
+        background: #f0f0f0;
+      }
+
+      .back-menu-options {
+        margin: 0;
+      }
+
+      .filters {
+        flex-wrap: unset;
+      }
+
+      .mobile-menu.active {
+        padding-top: 32%;
+        /* justify-content: unset; */
+      }
+
+      .mobile-menu {
+        max-height: 100dvh;
+        overflow-y: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <!-- Normal layout -->
+    <div class="header-normal">
+      <div class="logo">
+        <a href="index.html" style="color: inherit; text-decoration: none">HARSSH DOSHI
+        </a>
+      </div>
+      <div class="nav-row">
+        <div class="nav-left">
+          <a href="Love Mirage.html" style="white-space: nowrap">LOVE MIRAGE</a>
+          <a href="shop.html">JEWELLERY</a>
+        </div>
+        <div class="nav-right">
+          <!-- <div class="shopping-bag-icon" onclick="toggleShoppingBag()" style="color: black;">
+              <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20,6h-3V4c0-2.209-1.791-4-4-4S9,1.791,9,4v2H6C4.895,6,4,6.895,4,8v12c0,2.209,1.791,4,4,4h8c2.209,0,4-1.791,4-4V8
+                    C20,6.895,19.105,6,18,6z M11,4c0-1.104,0.896-2,2-2s2,0.896,2,2v2h-4V4z M18,20c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2V8h3v2
+                    c0,0.552,0.448,1,1,1s1-0.448,1-1V8h4v2c0,0.552,0.448,1,1,1s1-0.448,1-1V8h3V20z" fill="currentColor"/>
+              </svg>
+            </div> -->
+
+          <div class="nav-item">
+            <a href="WORLD OF HARSSH DOSHI.html"><span style="white-space: nowrap">
+                <pre>OUR JAGAT</pre>
+              </span></a>
+            <!-- <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="menu-column">
+                  <ul>
+                    <li>
+                      <a href="WORLD OF HARSSH DOSHI.html">WORLD OF HARSSH DOSHI</a>
+                    </li>
+                    <li><a href="OUR FILMS.html">OUR FILMS</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+          </div>
+          <a href="Contact.html">CONTACT</a>
+          <div class="shopping-bag-icon" onclick="toggleShoppingBag()">
+            <label style="font-size: 14px; font-family: 'Arpona Regular', sans-serif; color: #000;">CART<span
+                class="bag-count"></span></label>
+          </div>
+          <a href="account.html" id="accountLink"
+            style="display: none; align-items: center; vertical-align: middle; height: 20px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+          <a href="login.html" id="loginLink"
+            style="display: inline-flex; align-items: center; vertical-align: middle; height: 20px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky layout -->
+    <div class="sticky-layout">
+      <div class="nav-left">
+        <a href="Love Mirage.html">LOVE MIRAGE</a>
+        <a href="shop.html">JEWELLERY</a>
+      </div>
+      <div class="logo">
+        <a href="index.html" style="
+            color: inherit;
+            text-decoration: none;
+            font-size: 25px;
+            /* font-weight: bold; */
+          "><span style="white-space: nowrap; font-family: 'Aviano Flare';">HARSSH DOSHI</span></a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-item">
+          <a href="WORLD OF HARSSH DOSHI.html"><span style="white-space: nowrap">
+              <pre>OUR JAGAT</pre>
+            </span></a>
+        </div>
+        <a href="Contact.html">CONTACT</a>
+        <div class="shopping-bag-icon" onclick="toggleShoppingBag()" style="color: black;">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,6h-3V4c0-2.209-1.791-4-4-4S9,1.791,9,4v2H6C4.895,6,4,6.895,4,8v12c0,2.209,1.791,4,4,4h8c2.209,0,4-1.791,4-4V8
+                    C20,6.895,19.105,6,18,6z M11,4c0-1.104,0.896-2,2-2s2,0.896,2,2v2h-4V4z M18,20c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2V8h3v2
+                    c0,0.552,0.448,1,1,1s1-0.448,1-1V8h4v2c0,0.552,0.448,1,1,1s1-0.448,1-1V8h3V20z"
+              fill="currentColor" />
+          </svg>
+        </div>
+        <a href="account.html" id="accountLinkSticky"
+          style="display: none; align-items: center; vertical-align: middle; height: 20px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <a href="login.html" id="loginLinkSticky"
+          style="display: inline-flex; align-items: center; vertical-align: middle; height: 20px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile toggle -->
+    <div class="mobile-toggle" id="menuToggle">
+      <img src="assets/menu.svg" alt="Menu Icon" />
+    </div>
+
+    <!-- Cart Toggle -->
+    <div class="cart-toggle" id="cartToggle" onclick="toggleShoppingBag()">
+      <img src="assets/cart.png" alt="Cart Icon" />
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <img class="close-button" src="assets/close.png" alt="Close Icon" id="closeMenuBtn">
+      <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+      <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+      <a href="shop.html">JEWELLERY</a>
+      <a href="Love Mirage.html">LOVE MIRAGE</a>
+      <div class="accordion-item" style="display: none !important;">
+        <div class="accordion-header" id="jagatAccordion">
+          OUR JAGAT
+        </div>
+        <!-- <div class="accordion-body" id="jagatAccordionBody">
+          <a href="WORLD OF HARSSH DOSHI.html">WORLD OF HARSSH DOSHI</a>
+          <a href="OUR FILMS.html">OUR FILMS</a>
+        </div> -->
+      </div>
+      <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+      <a href="Contact.html">CONTACT</a>
+
+      <!-- Auth Links -->
+      <a href="login.html" id="mobileLoginLink">LOGIN / REGISTER</a>
+      <a href="account.html" id="mobileAccountLink" style="display: none;">MY ACCOUNT</a>
+      <a href="#" id="mobileLogoutLink" style="display: none;" onclick="handleLogout(event)">LOGOUT</a>
+
+      <div class="Mobile-text">
+        <a style="font-family: Arpona light, sans-serif">FIND A BOUTIQUE</a><br />
+        <a style="font-family: Arpona light, sans-serif">BOOK A VIRTUAL APPOINTMENT</a><br />
+        <a style="font-family: Arpona light, sans-serif">PR<span class="demo_bypass">/</span>PRESS ENQUIRES</a><br />
+        <a style="
+            font-family: Arpona light, sans-serif;
+            font-size: 15px;
+            text-decoration: underline;
+          ">Instagram</a>
+      </div>
+      <div class="Mobile-location" style="cursor: pointer;"
+        onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">
+        <!-- <p>SHOP IN: <span class="footerCountryName">COUNTRY NAME</span> <span class="footerCountryCurrency">$/EN</span> -->
+        </p>
+        <!-- <a href="javascript:void(0)">Change Location <span class="demo_bypass">/</span> Language</a> -->
+      </div>
+    </div>
+
+    <!-- Refine Menu -->
+    <div class="mobile-menu" id="refineMenu">
+      <img class="close-button" src="assets/close.png" alt="Close Icon" id="refineCloseMenuBtn">
+      <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+      <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 95%;">
+        <span id="clearAllFiltersBtn" style="font-family: Arpona light, sans-serif; color: #000;">Clear All</span>
+        <a>FILTERS</a>
+        <span style="display: hidden; color: transparent;"> Clear All </span>
+      </div>
+
+      <div class="back-menu-options">
+        <div class="filters">
+          <h4>PRODUCT TYPE</h4>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="bracelet" id="filterTypeBracelet" />
+            <label for="filterTypeBracelet" style="font-size: 15px;">BRACELET</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="earrings" id="filterTypeEarrings" />
+            <label for="filterTypeEarrings" style="font-size: 15px;">EARRINGS</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="necklace" id="filterTypeNecklace" />
+            <label for="filterTypeNecklace" style="font-size: 15px;">NECKLACE</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="ring" id="filterTypeRing" />
+            <label for="filterTypeRing" style="font-size: 15px;">RING</label>
+          </div>
+
+          <h4>METAL TYPE</h4>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="metal" value="yellow" id="filterMetalYellow" />
+            <label for="filterMetalYellow" style="font-size: 15px;">YELLOW GOLD</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="metal" value="white" id="filterMetalWhite" />
+            <label for="filterMetalWhite" style="font-size: 15px;">WHITE GOLD</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="metal" value="rose" id="filterMetalRose" />
+            <label for="filterMetalRose" style="font-size: 15px;">ROSE GOLD</label>
+          </div>
+
+          <h4>PRICE RANGE</h4>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="price" value="1500" id="filterPrice1500" />
+            <label for="filterPrice1500" style="font-size: 15px;">UP TO <span class="demo_bypass">$</span> 1,500</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="price" value="5000" id="filterPrice5000" />
+            <label for="filterPrice5000" style="font-size: 15px;">UP TO <span class="demo_bypass">$</span> 5,000</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="price" value="15500" id="filterPrice15500" />
+            <label for="filterPrice15500" style="font-size: 15px;">UP TO <span class="demo_bypass">$</span>
+              15,500</label>
+          </div>
+
+          <div class="subimt_btn">
+            <h4>APPLY FILTERS <span id="currentFiltersSelected"></span></h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sort Menu -->
+    <div class="mobile-menu" id="sortMenu">
+      <img class="close-button" src="assets/close.png" alt="Close Icon" id="sortCloseMenuBtn">
+      <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+      <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+
+      <div style="display: flex; align-items: center; justify-content: center; width: 95%;">
+        <a>SORT</a>
+      </div>
+
+      <div class="back-menu-options">
+        <div class="filters">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="bracelet" id="filterTypeBracelet" />
+            <label for="filterTypeBracelet" style="font-size: 15px;">LATEST ARRIVALS</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="earrings" id="filterTypeEarrings" />
+            <label for="filterTypeEarrings" style="font-size: 15px;">RECOMMENDED</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="necklace" id="filterTypeNecklace" />
+            <label for="filterTypeNecklace" style="font-size: 15px;">PRICE HIGH TO LOW</label>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <input type="checkbox" class="filter" data-filter-group="type" value="ring" id="filterTypeRing" />
+            <label for="filterTypeRing" style="font-size: 15px;">PRICE LOW TO HIGH</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Two-Coloumn Section -->
+  <section id="collections" class="two-column-section">
+    <div class="jewellery-container">
+      <div class="column text-column">
+        <h2>BANDHARAN</h2>
+        <p>
+          Rooted in the Gujarati word बंधारण, Bandharan draws inspiration from India’s
+          timeless symbolism of unity and interconnectedness. Each creation is meticulously
+          crafted, where interlaced gold forms and luminous diamonds are patiently refined
+          to echo this heritage. Through every step, the links gain brilliance and harmony,
+          revealing a sculptural elegance that honours tradition with contemporary craftsmanship.
+        </p>
+        <a href="#shop" class="cta-button-black" onclick="goToNextSection()">Explore Collection
+        </a>
+      </div>
+
+      <div class="column image-column">
+        <img src="assets/love_mirage_2.png" alt="Jewellery collection" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile Section -->
+  <section class="mobile-section">
+    <div class="explore-collection">
+      <div class="hero-content">
+        <h1 class="hero-title">BANDHARAN</h1>
+        <p class="hero-subtitle">A jewel to shine, a scarf in the wind, a watch for the holidays;<br />this summer,
+          Cartier is heading for the shores of style. A<br /> jewel to shine, a scarf in the wind, a watch for the
+          holidays;<br />this summer, Cartier is heading for the shores of style.<br />A jewel to shine, a scarf in the
+          wind, a watch for the holidays;<br />this summer, Cartier is heading for the shores of style.<br /></p>
+        <p class="hero-link" onclick="goToNextSection()">EXPLORE COLLECTION</p>
+        <div class="arrow-down" onclick="goToNextSection()"></div>
+      </div>
+    </div>
+
+    <div class="images-carousel" id="carousel">
+      <div class="product-grid" id="productListMobile">
+        <div class="page-loader" id="pageLoader" style="height: 50dvh; width: 100vw;">
+          <div class="loader-spinner" id="productLoader"></div>
+        </div>
+        <!-- Products filled by JS -->
+      </div>
+
+      <!-- STICKY BAR WRAPPER -->
+      <div class="sticky-footer" id="stickyFooter">
+        <button class="footer-button" id="refineButton">REFINE <span id="currentFiltersSelected"></span></button>
+        <button class="footer-button" id="sortButton">SORT</button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Shop Section -->
+  <section id="shop" class="shop-section">
+    <div class="container">
+      <div class="filters">
+        <div>
+          <div style="display: flex; align-items: end; justify-content: space-between;">
+            <h4>Sort By</h4>
+            <p id="clearAllButton" style="font-size: 12px; color: #000; cursor: pointer; margin-bottom: 10px;"
+              onclick="clearSelected()">Clear All</p>
+          </div>
+          <input class="filter" type="radio" name="sort" value="recommended" id="recommended" />
+          <label for="recommended" style="font-size: 15px;">Recommended</label><br />
+
+          <input class="filter" type="radio" name="sort" value="high-to-low" id="high-to-low" />
+          <label for="high-to-low">Price High to Low</label><br />
+
+          <input class="filter" type="radio" name="sort" value="low-to-high" id="low-to-high" />
+          <label for="low-to-high">Price Low to High</label>
+        </div>
+        <div>
+          <h4>Product Type</h4>
+          <label><input type="checkbox" class="filter" data-type="bracelet" /> Bracelet</label><br />
+          <label><input type="checkbox" class="filter" data-type="earrings" /> Earrings</label><br />
+          <label><input type="checkbox" class="filter" data-type="necklace" /> Necklace</label><br />
+          <label><input type="checkbox" class="filter" data-type="ring" /> Ring</label>
+        </div>
+        <div>
+          <h4>Metal</h4>
+          <label><input type="checkbox" class="filter" data-metal="yellow" /> Yellow Gold</label><br />
+          <label><input type="checkbox" class="filter" data-metal="white" /> Rose Gold</label><br />
+          <label><input type="checkbox" class="filter" data-metal="white" /> White Gold</label>
+        </div>
+        <div>
+          <h4>Price Range</h4>
+          <label><input type="checkbox" class="filter" data-price="1500" /> Up to $1,500</label><br />
+          <label><input type="checkbox" class="filter" data-price="5000" /> Up to $5,000</label><br />
+          <label><input type="checkbox" class="filter" data-price="15500" /> Up to $15,500</label>
+        </div>
+      </div>
+      <div id="productList" class="products">
+        <div class="page-loader" id="pageLoader" style="height: 50dvh; width: 70vw;">
+          <div class="loader-spinner" id="productLoader"></div>
+        </div>
+        <!-- Products will be inserted here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <section id="Campaign" class="campaign-section desktop-only">
+    <img src="assets/love_mirage_1.png" alt="Campaign Background" class="background-image">
+    <div class="content">
+      <h1 class="campaign-title">LOVE MIRAGE</h1>
+      <p class="tagline">A bespoke commission, engineered with precise <br /> craftsmanship and personalised through
+        refined faceting.</p>
+      <a href="Love Mirage.html" class="cta-button1">Explore Now</a>
+    </div>
+  </section>
+
+  <section id="Campaign" class="campaign-section mobile-only">
+    <img src="assets/shop_mobile.png" alt="Campaign Background" class="background-image">
+    <div class="content">
+      <div>
+        <h1 class="campaign-title">LOVE MIRAGE</h1>
+        <p class="tagline">A bespoke commission, engineered with precise <br /> craftsmanship and personalised through
+          refined faceting.</p>
+      </div>
+      <a href="Love Mirage.html" class="cta-button1">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section id="newsletter" class="newsletter newsletter-100dvh" style="padding-top: 100px;">
+    <div class="column image-column">
+      <img id="newsletter-image" src="assets/newsletter_mobile.png" alt="Newsletter" />
+    </div>
+    <h2>NEWSLETTER</h2>
+    <p>
+      Subscribe to the newsletter and uncover more about HARSSH DOSHI
+      creations patrimony, and craftsmanship stories.
+    </p>
+    <div class="newsletter-form">
+      <input type="email" placeholder="Email Address" style="padding-bottom: 5px;" required />
+      <button type="submit">PROCEED</button>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-logo">
+        <!-- <img src="assets/footer-logo.svg" alt="Harssh Doshi Logo" /> -->
+        <img src="assets/hallmark_2026.svg" alt="Harssh Doshi Logo" />
+
+      </div>
+      <div class="footer-location">
+        <span style="font-family: Arpona, sans-serif; cursor: pointer;"
+          onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">SHOP
+          IN:
+          <span class="footerCountryName">COUNTRY NAME</span>
+          <span class="footerCountryCurrency">$/EN</span>
+        </span>
+        <a href="#"
+          onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">Change
+          Location</a>
+      </div>
+
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>CONTACT US</h3>
+          <ul>
+            <li><a href="Contact.html">SEND A MESSAGE</a></li>
+            <li><a href="Contact.html">BOOK A VIRTUAL APPOINTMENT</a></li>
+          </ul>
+          <div class="social-links">
+            <a href="https://www.instagram.com/harsshdoshi?igsh=MTB1bW05ZTFpeWp5&utm_source=qr">Instagram</a>
+            <a href="https://www.linkedin.com/company/harssh-doshi/">LinkedIn</a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>COMPANY</h3>
+          <ul>
+            <li><a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a></li>
+            <li><a href="#">FIND A BOUTIQUE</a></li>
+            <li><a href="#">PR <span class="demo_bypass">&</span> PRESS ENQUIRIES</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>LEGAL <span class="demo_bypass">&</span> PRIVACY</h3>
+          <ul>
+            <li><a href="Privacy-Policy.html">PRIVACY POLICY</a></li>
+            <li><a href="Privacy-Policy.html">COOKIE POLICY</a></li>
+          </ul>
+        </div>
+        <div class="footer-logo1">
+          <!-- <img src="assets/footer_icon_1.svg" alt="Harssh Doshi Logo" /> -->
+          <img src="assets/footer_icon_2.svg" alt="Harssh Doshi Logo" />
+
+          <div class="footer-copyright">
+            <span>COPYRIGHT HARSH DOSHI</span>
+            <!-- <a href="#">Site Map</a> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-location">
+        <span style="font-family: Arpona, sans-serif">SHOP IN: COUNTRY NAME</span>
+        <a href="#">Change Location</a>
+      </div>
+      <div class="footer-copyright">
+        <span>COPYRIGHT HARSH DOSHI 2025</span>
+        <a href="#">Site Map</a>
+      </div>
+    </div>
+  </footer>
+
+  <section id="footer-mobile" class="site-footer mobile-only">
+    <!-- Footer -->
+    <footer id="footer" class="site-footer mobile-only">
+      <div class="footer-main">
+        <div class="footer-logo">
+          <!-- <img src="assets/footer-logo.svg" alt="Harssh Doshi Logo" /> -->
+          <img src="assets/hallmark_2026.svg" alt="Harssh Doshi Logo" />
+        </div>
+
+        <div class="footer-location">
+          <span style="font-family: Arpona, sans-serif; cursor: pointer;"
+            onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">SHOP
+            IN:
+            <span class="footerCountryName">COUNTRY NAME</span>
+            <span class="footerCountryCurrency">$/EN</span>
+          </span>
+          <a href="#"
+            onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">Change
+            Location</a>
+        </div>
+
+        <div class="footer-content">
+          <div class="footer-column">
+            <h3>CONTACT US</h3>
+            <ul>
+              <li><a href="Contact.html">SEND A MESSAGE</a></li>
+              <li><a href="Contact.html">BOOK A VIRTUAL APPOINTMENT</a></li>
+            </ul>
+            <div class="social-links">
+              <a href="https://www.instagram.com/harsshdoshi?igsh=MTB1bW05ZTFpeWp5&utm_source=qr">Instagram</a>
+              <a href="https://www.linkedin.com/company/harssh-doshi/">LinkedIn</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h3>COMPANY</h3>
+            <ul>
+              <li><a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a></li>
+              <li><a href="#">FIND A BOUTIQUE</a></li>
+              <li><a href="#">PR <span class="demo_bypass">&</span> PRESS ENQUIRIES</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h3>LEGAL <span class="demo_bypass">&</span> PRIVACY</h3>
+            <ul>
+              <li><a href="Privacy-Policy.html">PRIVACY POLICY</a></li>
+              <li><a href="Privacy-Policy.html">COOKIE POLICY</a></li>
+            </ul>
+          </div>
+          <div class="footer-logo1">
+            <!-- <img src="assets/footer_icon_1.svg" alt="Harssh Doshi Logo" /> -->
+            <img src="assets/footer_icon_2.svg" alt="Harssh Doshi Logo" />
+
+            <div class="footer-copyright">
+              <span>COPYRIGHT HARSH DOSHI</span>
+              <!-- <a href="#">Site Map</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-location">
+          <span style="font-family: Arpona, sans-serif; cursor: pointer;" onclick="toggleCountrySelector()">SHOP IN:
+            COUNTRY NAME</span>
+          <a href="#">Change Location</a>
+        </div>
+        <div class="footer-copyright">
+          <span>COPYRIGHT HARSH DOSHI 2025</span>
+          <a href="#">Site Map</a>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="shop.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const refineButton = document.getElementById('refineButton');
+      const sortButton = document.getElementById('sortButton');
+      const refineMenu = document.getElementById('refineMenu');
+      const sortMenu = document.getElementById('sortMenu');
+      const refineCloseMenuBtn = document.getElementById('refineCloseMenuBtn');
+      const sortCloseMenuBtn = document.getElementById('sortCloseMenuBtn');
+      const applyFiltersButton = document.querySelector('#refineMenu .subimt_btn');
+      const refineMenuCurrentFiltersSelected = document.querySelector('#refineMenu #currentFiltersSelected');
+      const footerRefineButtonCurrentFiltersSelected = document.querySelector('#refineButton #currentFiltersSelected');
+      const filterCheckboxes = document.querySelectorAll('#refineMenu .filter');
+
+      // Function to update the filter count
+      function updateFilterCount() {
+        const selectedFilters = document.querySelectorAll('#refineMenu .filter:checked').length;
+        if (refineMenuCurrentFiltersSelected) {
+          refineMenuCurrentFiltersSelected.textContent = selectedFilters > 0 ? `(${selectedFilters})` : '';
+        }
+        if (footerRefineButtonCurrentFiltersSelected) {
+          footerRefineButtonCurrentFiltersSelected.textContent = selectedFilters > 0 ? `(${selectedFilters})` : '';
+        }
+      }
+
+      // Initial filter count update
+      updateFilterCount();
+
+      // Update filter count on checkbox change
+      filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateFilterCount);
+      });
+
+      // Clear all filters
+      const clearAllFiltersBtn = document.getElementById('clearAllFiltersBtn');
+      if (clearAllFiltersBtn) {
+        clearAllFiltersBtn.addEventListener('click', function () {
+          filterCheckboxes.forEach(checkbox => {
+            checkbox.checked = false;
+          });
+          updateFilterCount();
+        });
+      }
+
+      // Apply filters button functionality
+      applyFiltersButton.addEventListener('click', function () {
+        refineMenu.classList.remove('active');
+      });
+
+      // Show refine menu
+      refineButton.addEventListener('click', function () {
+        refineMenu.classList.add('active');
+      });
+      // Hide refine menu
+      if (refineCloseMenuBtn) {
+        refineCloseMenuBtn.addEventListener('click', function () {
+          refineMenu.classList.remove('active');
+        });
+      }
+
+      // Show sort menu
+      if (sortButton) {
+        sortButton.addEventListener('click', function () {
+          sortMenu.classList.add('active');
+        });
+      }
+
+      // Hide sort menu
+      const actualSortCloseMenuBtn = document.getElementById('sortCloseMenuBtn');
+      if (actualSortCloseMenuBtn) {
+        actualSortCloseMenuBtn.addEventListener('click', function () {
+          sortMenu.classList.remove('active');
+        });
+      }
+
+      // Handle exclusive selection for sort options
+      const sortCheckboxes = document.querySelectorAll('#sortMenu .filters input[type="checkbox"]');
+      sortCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+          if (this.checked) {
+            sortCheckboxes.forEach(otherCheckbox => {
+              if (otherCheckbox !== this) {
+                otherCheckbox.checked = false;
+              }
+            });
+          }
+        });
+      });
+    });
+
+    document.addEventListener('scroll', function () {
+      const stickyFooter = document.getElementById('stickyFooter');
+      const carouselContainer = document.getElementById('carousel');
+
+      if (!stickyFooter || !carouselContainer) return;
+
+      const footerHeight = stickyFooter.offsetHeight;
+      const containerRect = carouselContainer.getBoundingClientRect();
+      const distanceToContainerBottom = window.innerHeight;
+
+      if (containerRect.bottom > window.innerHeight) {
+        stickyFooter.classList.add('fixed');
+        stickyFooter.style.top = 'auto';
+      } else if (containerRect.top < window.innerHeight - footerHeight) {
+        stickyFooter.classList.remove('fixed');
+      } else {
+        stickyFooter.classList.remove('fixed');
+      }
+
+      if (window.innerHeight < containerRect.top) {
+        stickyFooter.classList.remove('fixed');
+      }
+    });
+  </script>
+  <script>
+    window.goToNextSection = function () {
+      var ids = ['shop', 'carousel', 'Campaign', 'newsletter'];
+      for (var i = 0; i < ids.length; i++) {
+        var el = document.getElementById(ids[i]);
+        if (el) {
+          var s = window.getComputedStyle(el);
+          if (s.display !== 'none' && s.visibility !== 'hidden') {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+          }
+        }
+      }
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth' });
+    };
+  </script>
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+  <script src="header-loader.js"></script>
+  <script src="footer-loader.js"></script>
+  <script src="mailchimp-newsletter.js"></script>
+
+  <script src="location-popup.js"></script>
+  <script src="cookie-consent.js"></script>
+</body>
+
+</html>

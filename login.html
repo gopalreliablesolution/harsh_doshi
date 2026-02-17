@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Harssh Doshi</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="config.js"></script>
+    <script src="customer-auth.js"></script>
+    <script src="shopping-bag.js"></script>
+    <style>
+        body {
+            margin-top: 20px;
+            padding: 0;
+            min-height: 100vh;
+            background: #ffffff;
+            font-family: 'Arpona Regular', sans-serif;
+        }
+
+        .nav-row a,
+        pre {
+            color: black !important;
+        }
+
+        .site-header.sticky {
+            background: white !important;
+        }
+
+        .login-content-wrapper {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 140px 20px 60px;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 520px;
+            padding: 0;
+            background: transparent;
+            margin-top: 2%;
+        }
+
+        .form-container {
+            background: #f8f8f8;
+            padding: 40px 50px;
+            margin-top: 50px;
+        }
+
+        /* Tab Navigation */
+        .auth-tabs {
+            /* margin-top: 20px; */
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .auth-tab {
+            padding: 15px 0;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            color: #666;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            bottom: -1px;
+        }
+
+        .auth-tab:hover {
+            color: #000;
+        }
+
+        .auth-tab.active {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        .auth-container h1 {
+            font-family: 'Arpona Regular', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-align: left;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .form-group {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 0;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+            font-family: 'Arpona Regular', sans-serif;
+            background: transparent;
+            outline: none;
+            transition: border-color 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus {
+            border-bottom-color: #000;
+        }
+
+        .form-group input::placeholder {
+            color: #999;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+
+        .form-group label {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            font-size: 13px;
+            color: #999;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+            font-family: 'Arpona Regular', sans-serif;
+        }
+
+        .form-group input:focus+label,
+        .form-group input:not(:placeholder-shown)+label {
+            top: -12px;
+            font-size: 11px;
+            color: #666;
+            letter-spacing: 0.5px;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 5px;
+            top: 12px;
+            font-size: 12px;
+            color: #666;
+            cursor: pointer;
+            text-decoration: underline;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            border: 1px solid #000;
+            background: #000;
+            color: #fff;
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Arpona Regular', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .btn-primary:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .auth-links {
+            text-align: left;
+            margin-top: 25px;
+            font-size: 12px;
+            letter-spacing: 0.3px;
+        }
+
+        .auth-links p {
+            margin: 15px 0;
+            color: #666;
+        }
+
+        .auth-links a {
+            color: #000;
+            text-decoration: underline;
+            transition: opacity 0.3s ease;
+        }
+
+        .auth-links a:hover {
+            opacity: 0.6;
+        }
+
+        .error-message {
+            color: #d60000;
+            font-size: 11px;
+            margin-top: 10px;
+            text-align: left;
+            letter-spacing: 0.3px;
+        }
+
+        .success-message {
+            color: #008000;
+            font-size: 11px;
+            margin-top: 10px;
+            text-align: left;
+            letter-spacing: 0.3px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .login-content-wrapper {
+                padding: 120px 20px 40px;
+            }
+
+            .auth-container {
+                max-width: 100%;
+                padding: 0 10px;
+            }
+
+            .form-container {
+                padding: 30px 25px;
+            }
+
+            .auth-tabs {
+                gap: 20px;
+                margin-bottom: 40px;
+            }
+
+            .auth-tab {
+                font-size: 11px;
+                padding: 12px 0;
+            }
+
+            .auth-container h1 {
+                font-size: 14px;
+                margin-bottom: 25px;
+            }
+
+            .form-group {
+                margin-bottom: 25px;
+            }
+
+            .btn-primary {
+                padding: 13px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <!-- Normal layout -->
+        <div class="header-normal">
+            <div class="logo">
+                <a href="index.html" style="color: inherit; text-decoration: none">HARSSH DOSHI</a>
+            </div>
+            <div class="nav-row">
+                <div class="nav-left">
+                    <a href="Love Mirage.html" style="white-space: nowrap">LOVE MIRAGE</a>
+                    <a href="shop.html">JEWELLERY</a>
+                </div>
+                <div class="nav-right">
+                    <div class="nav-item">
+                        <a href="WORLD OF HARSSH DOSHI.html"><span style="white-space: nowrap">
+                                <pre>OUR JAGAT</pre>
+                            </span></a>
+                    </div>
+                    <a href="Contact.html">CONTACT</a>
+                    <div class="shopping-bag-icon" onclick="toggleShoppingBag()">
+                        <label
+                            style="font-size: 14px; font-family: 'Arpona Regular', sans-serif; color: #000;">CART<span
+                                class="bag-count"></span></label>
+                    </div>
+                    <a href="account.html" id="accountLink"
+                        style="display: none; align-items: center; vertical-align: middle; height: 20px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                    <a href="login.html" id="loginLink"
+                        style="display: inline-flex; align-items: center; vertical-align: middle; height: 20px;">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sticky layout -->
+        <div class="sticky-layout">
+            <div class="nav-left">
+                <a href="Love Mirage.html">LOVE MIRAGE</a>
+                <a href="shop.html">JEWELLERY</a>
+            </div>
+            <div class="logo">
+                <a href="index.html" style="color: inherit; text-decoration: none; font-size: 21px;"><span
+                        style="white-space: nowrap; font-family: 'custom';">HARSSH DOSHI</span></a>
+            </div>
+            <div class="nav-right">
+                <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+                <a href="Contact.html">CONTACT</a>
+                <div class="shopping-bag-icon" onclick="toggleShoppingBag()">
+                    <label style="font-size: 14px; font-family: 'Arpona Regular', sans-serif;">CART<span
+                            class="bag-count"></span></label>
+                </div>
+                <a href="account.html" id="accountLinkSticky"
+                    style="display: none; align-items: center; vertical-align: middle; height: 20px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+                <a href="login.html" id="loginLinkSticky"
+                    style="display: inline-flex; align-items: center; vertical-align: middle; height: 20px;">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile toggle -->
+        <div class="mobile-toggle" id="menuToggle">
+            <img src="assets/menu.svg" alt="Menu Icon" />
+        </div>
+
+        <!-- Cart Toggle -->
+        <div class="cart-toggle" id="cartToggle" onclick="toggleShoppingBag()">
+            <img src="assets/cart.png" alt="Cart Icon" />
+        </div>
+
+        <!-- Mobile menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <img class="close-button" src="assets/close.png" alt="Close Icon" id="closeMenuBtn">
+            <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+            <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+            <a href="shop.html">JEWELLERY</a>
+            <a href="Love Mirage.html">LOVE MIRAGE</a>
+            <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+            <a href="Contact.html">CONTACT</a>
+            <!-- Auth Links -->
+            <a href="login.html" id="mobileLoginLink">LOGIN / REGISTER</a>
+            <a href="account.html" id="mobileAccountLink" style="display: none;">MY ACCOUNT</a>
+            <a href="#" id="mobileLogoutLink" style="display: none;" onclick="handleLogout(event)">LOGOUT</a>
+        </div>
+    </header>
+
+    <div class="login-content-wrapper">
+        <div class="auth-container">
+            <!-- Tab Navigation -->
+            <div class="auth-tabs">
+                <a href="login.html" class="auth-tab active">ALREADY REGISTERED?</a>
+                <a href="register.html" class="auth-tab">CREATE YOUR ACCOUNT</a>
+            </div>
+
+            <div class="form-container">
+                <h1>If you are already registered with harssh doshi, login here:</h1>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder=" " required>
+                        <label for="email">Email Address*</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" placeholder=" " required>
+                        <label for="password">Password*</label>
+                        <span class="password-toggle" onclick="togglePassword('password', this)">Show</span>
+                    </div>
+                    <div id="message"></div>
+                    <button type="submit" class="btn-primary">LOGIN</button>
+                </form>
+                <div class="auth-links">
+                    <p><a href="forgot-password.html">Forgot your password?</a></p>
+                    <p>Read the <a href="Privacy-Policy.html">Privacy Policy</a> for further information</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+    <script>
+        // Toggle password visibility
+        function togglePassword(fieldId, toggleBtn) {
+            const passwordInput = document.getElementById(fieldId);
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.textContent = 'Show';
+            }
+        }
+    </script>
+    <script>
+        // Sticky Header
+        window.addEventListener("scroll", () => {
+            const header = document.querySelector(".site-header");
+            if (window.innerWidth > 768) {
+                header.classList.toggle("sticky", window.scrollY > 0);
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.querySelector("#menuToggle");
+        const mobileMenu = document.querySelector("#mobileMenu");
+        const closeMenuBtn = document.getElementById("closeMenuBtn");
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener("click", () => {
+                mobileMenu.classList.toggle("active");
+                document.body.classList.toggle("no-scroll", mobileMenu.classList.contains("active"));
+            });
+        }
+
+        if (closeMenuBtn) {
+            closeMenuBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                mobileMenu.classList.remove("active");
+                document.body.classList.remove("no-scroll");
+            });
+        }
+
+        // Update auth links based on login status
+        function updateAuthLinks() {
+            if (typeof CustomerAuth === 'undefined') return;
+
+            const accountLink = document.getElementById('accountLink');
+            const loginLink = document.getElementById('loginLink');
+            const accountLinkSticky = document.getElementById('accountLinkSticky');
+            const loginLinkSticky = document.getElementById('loginLinkSticky');
+
+            if (CustomerAuth.isAuthenticated()) {
+                if (accountLink) {
+                    accountLinkSticky.href = 'account.html';
+                    const user = CustomerAuth.getUser();
+                    // Icon is now static SVG
+                }
+                if (loginLink) loginLink.style.display = 'none';
+                if (loginLinkSticky) loginLinkSticky.style.display = 'none';
+            } else {
+                if (accountLink) accountLink.style.display = 'none';
+                if (accountLinkSticky) accountLinkSticky.style.display = 'none';
+                if (loginLink) loginLink.style.display = 'inline';
+                if (loginLinkSticky) loginLinkSticky.style.display = 'inline';
+            }
+        }
+
+        // Update on page load
+        document.addEventListener('DOMContentLoaded', updateAuthLinks);
+    </script>
+    <script src="footer-loader.js"></script>
+    <script src="location-popup.js"></script>
+</body>
+
+</html>

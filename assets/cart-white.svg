@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 15.07">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <g id="Single_Product_-_Soft_Launch" data-name="Single Product - Soft Launch">
+    <g>
+      <path class="cls-1" d="M4.79,3.71c0-1.78,1.44-3.21,3.21-3.21s3.21,1.44,3.21,3.21"/>
+      <rect class="cls-1" x=".5" y="3.5" width="15" height="11.07"/>
+    </g>
+  </g>
+</svg>

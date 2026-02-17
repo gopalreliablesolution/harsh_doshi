@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile - Harssh Doshi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .profile-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .profile-container h1 {
+            margin-bottom: 30px;
+            font-family: 'Arpona', serif;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .btn-primary {
+            padding: 12px 30px;
+            background: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-secondary {
+            padding: 12px 30px;
+            background: white;
+            color: #000;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+        .success-message {
+            color: green;
+            margin-top: 10px;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="profile-container">
+        <h1>Edit Profile</h1>
+        <form id="profileForm">
+            <div class="form-group">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" disabled>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone">
+            </div>
+            <div id="message"></div>
+            <button type="submit" class="btn-primary">Save Changes</button>
+            <button type="button" class="btn-secondary" onclick="window.location.href='account.html'">Cancel</button>
+        </form>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="config.js"></script>
+    <script src="customer-auth.js"></script>
+    <script src="header-loader.js"></script>
+    <script src="footer-loader.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>

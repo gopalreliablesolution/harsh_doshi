@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://db.onlinewebfonts.com/c/9fb2d6d50ff8148a2c5dd6d21d8443cf?family=Arpona+Regular" rel="stylesheet">
+  <link rel="icon" type="image/png" href="footer-logo.ico">
+  <link rel="shortcut icon" href="footer-logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/style.css">
+  <script src="shopping-bag.js"></script>
+  <!-- <script src="auth.js"></script> -->
+  <title>World Of Harsh Doshi</title>
+
+  <style>
+    .scroll-for-more {
+      bottom: 20px;
+      /* display: None; */
+    }
+
+    .scroll-for-more p {
+      display: None;
+
+    }
+
+    .red-background .shopping-bag-icon label {
+      color: white;
+    }
+
+    .force-black {
+      color: black !important;
+    }
+
+    /* ===== MAIN CONTENT & HERO SECTION ===== */
+    .main-content {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-section {
+      height: 100dvh;
+      min-height: 100dvh;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      color: white;
+      overflow: hidden;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #4e0004;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .hero-title {
+      font-size: 1.3rem;
+      font-weight: 300;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      letter-spacing: 2px;
+      font-family: "Arpona Regular", serif !important;
+    }
+
+    .hero-subtitle {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      font-family: "Arpona Regular", serif;
+    }
+
+    .hero-description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+
+
+    /* Section wrapper */
+    .two-column-section {
+      background: #fff;
+      color: #000;
+      padding: 10% 0px;
+      /* fallback padding */
+    }
+
+    /* Container with max width */
+    .two-column-section .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 80px;
+      padding: 0 40px;
+      /* left and right spacing */
+    }
+
+    /* Two-Column Section */
+    .two-column-section .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 0 40px;
+      /* margin-left: 6%; */
+      /* padding-right: 0px; */
+    }
+
+    /* Text column = 35% */
+    .two-column-section .text-column {
+      flex: 0 0 38%;
+      /* max-width: 38%; */
+      max-width: 100%;
+
+    }
+
+    /* Image column = 65% */
+    .two-column-section .image-column {
+      flex: 0 0 45%;
+      /* max-width: 57%; */
+    }
+
+    /* .text-column h2 {
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-family: "Arpona Regular", serif;
+      font-weight: 600;
+    } */
+
+    /* .text-column p {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-family: "Arpona Regular", serif;
+      width: 98%;
+    } */
+
+    /* Section wrapper */
+    .two-column-section1 {
+      background: #fff;
+      color: #000;
+      padding: 15% 0px;
+      padding-right: 20px;
+    }
+
+    /* Two-Column Section */
+    .two-column-section1 .container1 {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      /* padding: 0 40px; */
+      margin-left: 6%;
+      padding-right: 0px;
+    }
+
+    /* Text column = 35% */
+    .two-column-section1 .text-column1 {
+      flex: 0 0 38%;
+      max-width: 38%;
+    }
+
+    /* Image column = 65% */
+    .two-column-section1 .image-column1 {
+      flex: 0 0 54%;
+      max-width: 57%;
+    }
+
+    .text-column1 h2 {
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-family: "Arpona Regular", serif;
+      font-weight: 600;
+    }
+
+    .text-column1 p {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-family: "Arpona Regular", serif;
+    }
+
+    .cta-button1 {
+      display: inline-block;
+      background-color: var(--white);
+      color: var(--black);
+      font-weight: 400;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      font-family: "Arpona Regular", serif;
+      position: relative;
+    }
+
+    .cta-button1::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      /* distance from text */
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    /* On hover -> animate underline left to right */
+    .cta-button1:hover::after {
+      transform: scaleX(1);
+    }
+
+    .image-column1 img {
+      width: 100%;
+      height: 450px;
+      object-fit: cover;
+      display: block;
+      padding-left: 3%;
+      margin-left: 11%;
+    }
+
+
+
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      /* Changed from overflow-x: auto */
+      white-space: nowrap;
+      margin-top: 80px;
+      margin-bottom: 160px;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 20px !important;
+    }
+
+    /* Default image size */
+    .carousel-slide img {
+      height: 450px;
+      cursor: pointer;
+      max-width: 300px;
+      object-fit: cover;
+      /* Ensures proper image scaling */
+    }
+
+    /* Large image size */
+    .carousel-slide.large img {
+      height: 450px;
+      /* Increased height for large images */
+      max-width: 900px;
+      /* Proportionally increased width */
+    }
+
+    /* Medium image size - same as default */
+    .carousel-slide.medium img {
+      height: 450px;
+      max-width: 300px;
+    }
+
+    /* Zoom overlay */
+    .zoom-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .zoom-overlay.active {
+      display: flex;
+    }
+
+    .zoom-image {
+      max-width: 90%;
+      max-height: 90%;
+      object-fit: contain;
+      /* Maintain aspect ratio in zoom */
+    }
+
+    /* Controls */
+    .close-btn,
+    .nav-btn {
+      position: absolute;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 2rem !important;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+      /* Smooth hover effect */
+    }
+
+    .close-btn:hover,
+    .nav-btn:hover {
+      opacity: 0.7;
+    }
+
+    .close-btn {
+      top: 20px;
+      right: 20px;
+    }
+
+    .nav-btn {
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 3rem;
+      padding: 10px;
+      user-select: none;
+      /* Prevent text selection */
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+
+    /* Mega Menu Styles */
+    .mega-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: 100%;
+      /* align with header */
+      background: #FFFFFFE6;
+      padding: 70px 40px;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    /* Show menu on hover */
+    .nav-item:hover .mega-menu,
+    .nav-item .mega-menu:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Mega menu content grid */
+    .mega-menu-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    /* Headings inside mega menu */
+    .mega-menu h3 {
+      color: #111;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Lists */
+    .mega-menu ul {
+      list-style: none;
+      margin: 0;
+      /* remove margin-right that was breaking layout */
+      padding: 0;
+      margin-right: 80px;
+    }
+
+    .mega-menu ul li {
+      margin-bottom: 12px;
+    }
+
+    /* Links */
+    .mega-menu ul li a {
+      position: relative;
+      /* needed for ::after underline */
+      color: black;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.3s ease;
+    }
+
+    .mega-menu ul li a:hover {
+      color: black;
+    }
+
+    /* Animated underline */
+    .mega-menu ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .mega-menu ul li a:hover::after {
+      transform: scaleX(1);
+    }
+
+    /* Default colors (adjust if yours differ) */
+    .site-header .header-normal a,
+    .site-header .header-normal .logo {
+      color: #fff;
+    }
+
+    /* Keep the dropdown visible when moving into it */
+    .nav-item:hover .mega-menu,
+    .nav-item .mega-menu:hover {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Make the ENTIRE header (including its padding gutters) white
+   whenever a mega menu is hovered */
+    .site-header:has(.nav-item:hover .mega-menu),
+    .site-header:has(.mega-menu:hover) {
+      background: #FFFFFFE6;
+      transition: all 0.3s ease;
+    }
+
+    /* Flip header texts to black in that state */
+    .site-header:has(.nav-item:hover .mega-menu) .logo,
+    .site-header:has(.mega-menu:hover) .logo,
+    .site-header:has(.nav-item:hover .mega-menu) .nav-left a,
+    .site-header:has(.nav-item:hover .mega-menu) .nav-right a,
+    .site-header:has(.mega-menu:hover) .nav-left a,
+    .site-header:has(.mega-menu:hover) .nav-right a {
+      color: #000 !important;
+    }
+
+    /* Mega menu links stay black */
+    .mega-menu ul li a {
+      color: #000 !important;
+    }
+
+    .header-normal li {
+      text-align: right;
+    }
+
+    .sticky-layout li {
+      text-align: right;
+    }
+
+    /* Mega menu for sticky header */
+    .sticky-layout .mega-menu {
+      border-color: #ccc;
+    }
+
+    .sticky-layout .nav-item:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 47%;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .scroll-down svg {
+      width: 32px;
+      height: 32px;
+      fill: rgb(255, 255, 255);
+    }
+
+
+    .scrollable-text-container {
+      width: 400px;
+      height: 200px;
+      /* margin: 30px auto 0 auto; */
+      position: relative;
+      overflow: hidden;
+    }
+
+    .scrollable-text {
+      padding: 20px;
+      height: 100%;
+      overflow-y: auto;
+      font-size: 14px;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.9);
+      /* Hide scrollbar */
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE/Edge */
+      font-family: Arpona, serif;
+    }
+
+    .scrollable-text::-webkit-scrollbar {
+      display: none;
+      /* Chrome/Safari */
+    }
+
+    .mobile-only {
+      display: none !important;
+    }
+
+    @media (max-width: 768px) {
+      .desktop-only {
+        display: none !important;
+      }
+
+      .mobile-only {
+        display: flex !important;
+        justify-content: center;
+      }
+
+      .scrollable-text {
+        padding: 20px 40px;
+      }
+
+      .collection-btn {
+        width: 100%;
+      }
+
+      /* First section mobile styles */
+      .two-column-section .container {
+        flex-direction: column;
+        padding: 0 40px;
+        padding-left: 30px;
+        gap: 30px;
+      }
+
+      .two-column-section .image-column {
+        order: 1;
+        max-width: 100%;
+      }
+
+      .two-column-section .text-column {
+        order: 2;
+        max-width: 100%;
+      }
+
+      .two-column-section .text-column h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
+      .two-column-section .image-column img {
+        width: 100%;
+        /* height: 300px; */
+        object-fit: cover;
+        /* padding-right: 10px */
+      }
+
+      .two-column-section .text-column p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      /* Second section mobile styles */
+      .two-column-section1 .container1 {
+        flex-direction: column;
+        padding: 0 40px;
+        padding-left: 20px;
+        gap: 30px;
+      }
+
+      .two-column-section1 .image-column1 {
+        order: 1;
+        max-width: 100%;
+      }
+
+      .two-column-section1 .text-column1 {
+        order: 2;
+        max-width: 100%;
+      }
+
+      .two-column-section1 .text-column1 h2 {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .two-column-section1 .image-column1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 10px;
+      }
+
+      .two-column-section1 .image-column1 img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        margin-left: 0;
+        max-width: 100%;
+      }
+
+      .two-column-section1 .text-column1 p {
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .header-normal {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .nav-left,
+      .nav-right {
+        display: none !important;
+      }
+
+      .mobile-menu .chevron {
+        font-size: 20px;
+        margin-left: 6px;
+        vertical-align: middle;
+      }
+
+      .site-header.sticky .mobile-toggle {
+        color: black;
+      }
+
+      .site-header.sticky .header-normal {
+        display: none;
+      }
+
+      .site-header.sticky .sticky-layout {
+        display: none;
+      }
+
+      .slider-container {
+        flex-direction: column;
+        height: auto;
+        padding: 0 20px;
+      }
+
+      .slider-item {
+        flex: none;
+        height: auto;
+      }
+
+      .slider-item img {
+        width: 100%;
+        height: 400px;
+      }
+
+      .slider-container:hover .slider-item,
+      .slider-container:hover .slider-item:hover {
+        flex: none;
+        transform: none;
+      }
+
+
+      /* Hero Section Mobile */
+      .hero-title {
+        font-size: 2.5rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-description {
+        font-size: 1rem;
+        padding: 0 10px;
+      }
+
+      .hero-section {
+        background-attachment: scroll;
+      }
+
+      .privacy-banner {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px 15px;
+
+      }
+
+      .privacy-text {
+        margin-right: 0;
+      }
+
+      .privacy-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+
+      /* Footer Mobile */
+      .footer-content {
+        grid-template-columns: 1fr;
+        /* gap: 40px; */
+      }
+
+      .footer-main {
+        padding: 40px 20px;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .footer-copyright {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .scroll-for-more {
+        bottom: 20px;
+      }
+
+      .scroll-for-more p {
+        display: flex;
+      }
+
+
+    }
+  </style>
+
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    const mobileMenu = document.getElementById("mobileMenu");
+    const logo = document.getElementById("siteLogo");
+
+    if (!mobileMenu || !logo) return;
+
+    const observer = new MutationObserver(() => {
+      if (mobileMenu.classList.contains("active")) {
+        logo.style.color = "black";
+      } else {
+        logo.style.color = "white";
+      }
+    });
+
+    observer.observe(mobileMenu, { attributes: true });
+
+  });
+</script>
+
+<body>
+
+  <header class="site-header red-background sticky">
+    <!-- Normal layout -->
+    <div class="header-normal transparent mobile-only">
+      <div class="logo white logo-normal">
+        <a href="index.html" id="siteLogo" style="color: inherit; text-decoration: none">HARSSH DOSHI
+        </a>
+      </div>
+      <div class="nav-row nav-normal">
+        <div class="nav-left">
+          <a class="white" href="Love Mirage.html" style="white-space: nowrap">LOVE MIRAGE</a>
+          <a class="white" href="shop.html">JEWELLERY</a>
+        </div>
+        <div class="nav-right">
+          <!-- <div class="shopping-bag-icon" onclick="toggleShoppingBag()">
+            <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20,6h-3V4c0-2.209-1.791-4-4-4S9,1.791,9,4v2H6C4.895,6,4,6.895,4,8v12c0,2.209,1.791,4,4,4h8c2.209,0,4-1.791,4-4V8
+                  C20,6.895,19.105,6,18,6z M11,4c0-1.104,0.896-2,2-2s2,0.896,2,2v2h-4V4z M18,20c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2V8h3v2
+                  c0,0.552,0.448,1,1,1s1-0.448,1-1V8h4v2c0,0.552,0.448,1,1,1s1-0.448,1-1V8h3V20z" fill="currentColor"/>
+            </svg>
+          </div> -->
+
+
+          <!-- <div class="nav-item"> -->
+          <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+          <!-- <div class="mega-menu">
+              <div class="mega-menu-content">
+                <div class="menu-column">
+                  <ul>
+                    <li>
+                      <a href="WORLD OF HARSSH DOSHI.html"
+                        >WORLD OF HARSSH DOSHI</a
+                      >
+                    </li>
+                    <li><a href="OUR FILMS.html">OUR FILMS</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+          <!-- </div> -->
+          <a href="Contact.html">CONTACT</a>
+          <div class="shopping-bag-icon" onclick="toggleShoppingBag()">
+            <label style="font-size: 14px; font-family: 'Arpona Regular', sans-serif; color: #fff;">CART<span
+                class="bag-count"></span></label>
+          </div>
+          <a href="account.html" id="accountLink"
+            style="display: none; align-items: center; vertical-align: middle; height: 20px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+          <a href="login.html" id="loginLink"
+            style="display: inline-flex; align-items: center; vertical-align: middle; height: 20px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sticky layout -->
+    <div class="sticky-layout sticky">
+      <div class="nav-left">
+        <a href="Love Mirage.html">LOVE MIRAGE</a>
+        <a href="shop.html">JEWELLERY</a>
+      </div>
+      <div class="logo">
+        <a href="index.html" style="
+            color: inherit;
+            text-decoration: none;
+            font-size: 25px;
+            /* font-weight: bold; */
+          "><span style="white-space: nowrap; font-family: 'Aviano Flare';">HARSSH DOSHI</span></a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-item">
+          <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+        </div>
+        <a href="Contact.html">CONTACT</a>
+        <div class="shopping-bag-icon" onclick="toggleShoppingBag()">
+          <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20,6h-3V4c0-2.209-1.791-4-4-4S9,1.791,9,4v2H6C4.895,6,4,6.895,4,8v12c0,2.209,1.791,4,4,4h8c2.209,0,4-1.791,4-4V8
+                  C20,6.895,19.105,6,18,6z M11,4c0-1.104,0.896-2,2-2s2,0.896,2,2v2h-4V4z M18,20c0,1.104-0.896,2-2,2H8c-1.104,0-2-0.896-2-2V8h3v2
+                  c0,0.552,0.448,1,1,1s1-0.448,1-1V8h4v2c0,0.552,0.448,1,1,1s1-0.448,1-1V8h3V20z"
+              fill="currentColor" />
+          </svg>
+        </div>
+        <a href="account.html" id="accountLinkSticky"
+          style="display: none; align-items: center; vertical-align: middle; height: 20px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+        <a href="login.html" id="loginLinkSticky"
+          style="display: inline-flex; align-items: center; vertical-align: middle; height: 20px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile toggle -->
+    <div class="mobile-toggle" id="menuToggle">
+      <img src="assets/menu.svg" alt="Menu Icon" />
+    </div>
+
+    <!-- Cart Toggle -->
+    <div class="cart-toggle" id="cartToggle" onclick="toggleShoppingBag()">
+      <img src="assets/cart.png" alt="Menu Icon" />
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <img class="close-button" src="assets/close.png" alt="Close Icon" id="closeMenuBtn"
+        onclick="document.getElementById('mobileMenu').classList.remove('active');">
+      <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+      <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+      <a href="shop.html">JEWELLERY</a>
+      <a href="Love Mirage.html">LOVE MIRAGE</a>
+      <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+      <a href="Contact.html">CONTACT</a>
+
+      <!-- Auth Links -->
+      <a href="login.html" id="mobileLoginLink">LOGIN / REGISTER</a>
+      <a href="account.html" id="mobileAccountLink" style="display: none;">MY ACCOUNT</a>
+      <a href="#" id="mobileLogoutLink" style="display: none;" onclick="handleLogout(event)">LOGOUT</a>
+
+      <div class="Mobile-text">
+        <a style="font-family: Arpona light, sans-serif">FIND A BOUTIQUE</a><br />
+        <a style="font-family: Arpona light, sans-serif">BOOK A VIRTUAL APPOINTMENT</a><br />
+        <a style="font-family: Arpona light, sans-serif">PR<span class="demo_bypass">/</span>PRESS ENQUIRES</a><br />
+        <a style="
+            font-family: Arpona light, sans-serif;
+            font-size: 15px;
+            text-decoration: underline;
+          ">Instagram</a>
+      </div>
+      <div class="Mobile-location" style="cursor: pointer;"
+        onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">
+        <!-- <p>SHOP IN: <span class="footerCountryName">COUNTRY NAME</span> <span class="footerCountryCurrency">$/EN</span> -->
+        </p>
+        <!-- <a href="javascript:void(0)">Change Location <span class="demo_bypass">/</span> Language</a> -->
+      </div>
+    </div>
+
+    <!-- Our Jagar Menu -->
+    <div class="mobile-menu" id="jagatMenu">
+      <img class="close-button" src="assets/close.png" alt="Close Icon" id="jagatCloseMenuBtn">
+      <img class="search-icon" src="assets/search.svg" alt="Search Icon" id="searchIconBtn">
+      <img class="cart-icon" src="assets/cart.png" alt="Cart Icon" id="cartIconBtn" onclick="toggleShoppingBag()">
+
+      <div style="display: flex; align-items: center; justify-content: space-between; width: 95%; padding-top: 8%">
+        <span id="jagatMenuBackBtn" style="font-family: Arpona light, sans-serif; color: #000;">Back</span>
+        <a>OUR JAGAT</a>
+        <span style="display: hidden; color: transparent;"> Back </span>
+      </div>
+
+      <div class="back-menu-options">
+        <a href="WORLD OF HARSSH DOSHI.html">WORLD OF HARSSH DOSHI</a>
+        <a href="OUR FILMS.html">OUR FILMS</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content area with hero section -->
+  <main class="main-content">
+    <section class="hero-section" id="hero">
+
+      <div class="hero-content">
+        <!-- <h1 class="hero-title">THREADS OF ELEGANCE</h1>
+        <p class="hero-subtitle">Discover the Art of Fine Jewellery</p> -->
+
+        <!-- New Scrollable Text Container -->
+        <div class="scrollable-text-container" id="textContainer">
+          <div class="scrollable-text" id="scrollableText">
+            <!-- <p style="margin: 0px 15px;"> -->
+            <p>
+              HARSSH DOSHI एक ऐसा हाउस है जो शिल्प, विरासत और शांत शक्ति से आकार लेता है।
+              हर रचना संरक्षण, स्मृति और संतुलन को धारण करती है, जीवन के साथ गरिमा, गहराई और
+              स्थायित्व के साथ चलने के लिए, ध्यान आकर्षित करने के लिए नहीं।
+            </p>
+            <p style="padding-top: 1rem;">
+              Harsh Doshi, Founder
+            </p>
+
+            <!-- <h3 style="margin-bottom: 15px; color: #fff;">Craftsmanship</h3>
+            <p style="margin: 0px 15px;">
+              Our skilled artisans combine traditional techniques with contemporary design, creating jewellery that
+              transcends time. From delicate filigree work to bold statement pieces, every detail is meticulously
+              crafted.
+            </p>
+
+            <h3 style="margin-bottom: 15px; color: #fff;">Premium Materials</h3>
+            <p style="margin: 0px 15px;">
+              We source only the finest gold, precious stones, and diamonds, ensuring that each piece not only
+              captivates with its beauty but also endures for generations to come.
+            </p>
+
+            <h3 style="margin-bottom: 15px; color: #fff;">Bespoke Experience</h3>
+            <p style="margin: 0px 15px;">
+              Our personalized approach ensures that every piece is as unique as the person who wears it. From initial
+              consultation to final creation, we work closely with you to bring your vision to life.
+            </p> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="scroll-for-more" style="color: white;" onclick="goToNextSection()">
+        <p>SCROLL FOR MORE</p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
+          <path d="M12 15.5l-7-7 1.41-1.42L12 12.67l5.59-5.59L19 8.5z" />
+        </svg>
+      </div>
+
+      <div class="privacy-banner">
+        <div class="play-controls">
+          <button type="button" class="play-btn" id="playBtn">⏸</button>
+          <button type="button" class="sound-btn" id="soundBtn">🔊</button>
+        </div>
+
+        <div class="privacy-text">
+          <h4>WE VALUE YOUR PRIVACY</h4>
+          <p>Your experience on this site will be improved by accepting cookies. <a href="#">Privacy Policy</a></p>
+        </div>
+
+        <div class="privacy-buttons">
+          <button type="button" class="customise-btn">Customise</button>
+          <button type="button" class="reject-btn">Reject All</button>
+          <button type="button" class="accept-btn">Accept All</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mobile View Sections -->
+    <section class="two-column-section mobile-only" style="min-height: 70vh !important;"
+      id="two-column-section-white-mobile">
+      <div class="container1">
+        <img class="mobile-only"
+          style="width: 100%; object-fit: cover; height: 52dvh; padding: 0 20px; margin-bottom: 2rem;"
+          src="assets/door_mobile.png" alt="Jewellery collection" />
+
+        <div class="column text-column1" style="padding: 0 20px;">
+          <h2>WORLD OF HARSSH DOSHI</h2>
+          <p>
+            HARSSH DOSHI is a contemporary Indian fine
+            and high jewelry house shaped by a vision of modern Indian
+            elegance, expressed through craftsmanship, heritage, and refined
+            design. Rooted in India’s artisanal legacy, particularly that of
+            the Gujarat region, the House approaches tradition as a living
+            foundation rather than a fixed reference. Cultural symbolism,
+            proportion, and material intelligence are translated into precise,
+            contemporary forms through a disciplined and measured process.
+            Each creation is crafted with respect for time, mastery, and the
+            human hand, treating gold and precious stones as enduring elements
+            shaped to gather meaning over years of wear. Conceived as a House
+            built on continuity and restraint, HARSSH DOSHI creates jewelry
+            designed to accompany a life and mature with it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="two-column-section mobile-only" style="min-height: 70vh !important; padding-top: 50px !important;"
+      id="collections" id="two-column-section-white-mobile">
+      <div class="container1">
+        <img class="mobile-only"
+          style="width: 100%; object-fit: cover; padding: 0 20px; height: 52dvh; margin-bottom: 2rem;"
+          src="assets/our_jagat_2.png" alt="Jewellery collection" />
+
+        <div class="column text-column1" style="padding: 0 20px;">
+          <h2>LOVE MIRAGE</h2>
+          <p>
+            Follow each stage of craftsmanship behind your Love Mirage creation,
+            from the initial assessment of a stone selected for its character to
+            the patient shaping, setting, and engraving that define its form.
+            Guided through a bespoke one-to-one process, the stone becomes the
+            centre of the design, refined through disciplined techniques and careful
+            handwork. Each detail is developed in dialogue with the client, resulting
+            in a singular high-jewelry creation shaped to preserve the stone’s identity
+            and endure over time.
+          </p>
+          <a href="shop.html" class="cta-button1 desktop-only">Explore
+          </a>
+          <a href="shop.html" class="collection-btn mobile-only">Discover</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-Coloumn Section -->
+    <section class="two-column-section desktop-only" id="two-column-section-white">
+      <div class="container">
+        <div class="column text-column">
+          <h2>WORLD OF HARSSH DOSHI</h2>
+          <p>
+            HARSSH DOSHI is a contemporary Indian fine
+            and high jewelry house shaped by a vision of modern Indian
+            elegance, expressed through craftsmanship, heritage, and refined
+            design. Rooted in India’s artisanal legacy, particularly that of
+            the Gujarat region, the House approaches tradition as a living
+            foundation rather than a fixed reference. Cultural symbolism,
+            proportion, and material intelligence are translated into precise,
+            contemporary forms through a disciplined and measured process.
+            Each creation is crafted with respect for time, mastery, and the
+            human hand, treating gold and precious stones as enduring elements
+            shaped to gather meaning over years of wear. Conceived as a House
+            built on continuity and restraint, HARSSH DOSHI creates jewelry
+            designed to accompany a life and mature with it.
+          </p>
+        </div>
+
+        <div class="column image-column">
+          <img src="assets/our_jagat_1.png" alt="Jewellery collection" style="transform: scale(1.25);" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Two-Coloumn Section -->
+    <section class="two-column-section1 desktop-only" id="collections">
+      <div class="container1">
+        <div class="column text-column1">
+          <h2>LOVE MIRAGE</h2>
+          <p>
+            Follow each stage of craftsmanship behind your Love Mirage creation,
+            from the initial assessment of a stone selected for its character to
+            the patient shaping, setting, and engraving that define its form.
+            Guided through a bespoke one-to-one process, the stone becomes the
+            centre of the design, refined through disciplined techniques and careful
+            handwork. Each detail is developed in dialogue with the client, resulting
+            in a singular high-jewelry creation shaped to preserve the stone’s identity
+            and endure over time.
+          </p>
+          <a href="shop.html" class="cta-button1 desktop-only">Explore
+          </a>
+          <a href="shop.html" class="collection-btn mobile-only">Discover</a>
+        </div>
+
+        <div class="column image-column1">
+          <img class="desktop-only" src="assets/our_jagat_2.png" alt="Jewellery collection" />
+          <img class="mobile-menu" src="assets/love-mirage-collection.png" alt="Jewellery collection" />
+        </div>
+      </div>
+    </section>
+
+    <!-- <div class="carousel-container">
+  <div class="carousel-track" id="carouselTrack">
+    <div class="carousel-slide">
+      <img src="assets/newsletter_mobile.png" alt="Gold Ring">
+    </div>
+    <div class="carousel-slide large">
+      <img src="assets/jewellery1.png" alt="Gold Necklace">
+    </div>
+    <div class="carousel-slide medium">
+      <img src="assets/jewellery3.png" alt="Gold Earrings">
+    </div>
+  </div>
+</div> -->
+
+    <!-- Full page zoom overlay -->
+    <div class="zoom-overlay" id="zoomOverlay">
+      <button class="nav-btn prev" id="prevBtn">&#10094;</button>
+      <img class="zoom-image" id="zoomImage" src="" alt="">
+      <button class="nav-btn next" id="nextBtn">&#10095;</button>
+      <button class="close-btn" id="closeBtn">&times;</button>
+    </div>
+
+    <!-- <section class="image-carousel mobile-only">
+      <img src="assets/hand_jewellery.jpeg" alt="Love Mirage Image 1" class="carousel-image active">
+      <img src="assets/love_mirage.jpeg" alt="Love Mirage Image 2" class="carousel-image">
+      <img src="assets/love_mirage_diamonds.jpeg" alt="Love Mirage Image 3" class="carousel-image">
+      <img src="assets/jewellery1.png" alt="Love Mirage Image 4" class="carousel-image">
+      <img src="assets/newsletter_mobile.png" alt="Love Mirage Image 5" class="carousel-image">
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section> -->
+
+    <script>
+      // Image Carousel functionality - Works for ALL mobile carousels
+      document.querySelectorAll('.image-carousel.mobile-only').forEach((carouselSection) => {
+        const carouselContainer = carouselSection.querySelector('.carousel-images-container');
+        const carouselImages = carouselSection.querySelectorAll('.carousel-image, .stacked-img'); // Supports both
+        const carouselDots = carouselSection.querySelectorAll('.carousel-dots .dot');
+
+        if (carouselImages.length === 0 || carouselDots.length === 0) return;
+
+        let currentIndex = 0;
+        let startTouchX = 0;
+        let endTouchX = 0;
+
+        function showImage(index) {
+          carouselImages.forEach((img, i) => {
+            img.classList.toggle('active', i === index);
+            if (i === index) {
+              img.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            }
+          });
+          carouselDots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+          });
+        }
+
+        function goToNextImage() {
+          currentIndex = (currentIndex + 1) % carouselImages.length;
+          showImage(currentIndex);
+        }
+
+        function goToPrevImage() {
+          currentIndex = (currentIndex - 1 + carouselImages.length) % carouselImages.length;
+          showImage(currentIndex);
+        }
+
+        // Dot navigation
+        carouselDots.forEach((dot, index) => {
+          // dot.addEventListener('click', () => {
+          //   currentIndex = index;
+          //   showImage(currentIndex);
+          // });
+        });
+
+        // Swipe functionality
+        carouselContainer.addEventListener('touchstart', (e) => {
+          startTouchX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carouselContainer.addEventListener('touchmove', (e) => {
+          endTouchX = e.touches[0].clientX;
+        }, { passive: true });
+
+        carouselContainer.addEventListener('touchend', () => {
+          const swipeThreshold = 50;
+          const diff = startTouchX - endTouchX;
+
+          if (diff > swipeThreshold) {
+            goToNextImage(); // Swipe left → next
+          } else if (diff < -swipeThreshold) {
+            goToPrevImage(); // Swipe right → prev
+          }
+
+          startTouchX = 0;
+          endTouchX = 0;
+        });
+      });
+    </script>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter" style="border-top: none; padding-top: 50px !important;">
+      <div class="column image-column">
+        <img id="newsletter-image" src="assets/newsletter_mobile.png" alt="Newsletter" />
+      </div>
+      <h2>NEWSLETTER</h2>
+      <p>
+        Subscribe to the newsletter and uncover more about HARSSH DOSHI
+        creations patrimony, and craftsmanship stories.
+      </p>
+      <div class="newsletter-form">
+        <input type="email" placeholder="Email Address"
+          style="padding-bottom: 5px; font-size: 16px; max-height: 10000px;" required />
+        <button type="submit">PROCEED</button>
+      </div>
+
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <div class="footer-main">
+          <div class="footer-logo">
+            <!-- <img src="assets/footer-logo.svg" alt="Harssh Doshi Logo" /> -->
+            <img src="assets/hallmark_2026.svg" alt="Harssh Doshi Logo" />
+          </div>
+
+          <div class="footer-location">
+            <span style="font-family: Arpona, sans-serif; cursor: pointer;"
+              onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">SHOP
+              IN:
+              <span class="footerCountryName">COUNTRY NAME</span>
+              <span class="footerCountryCurrency">$/EN</span>
+            </span>
+            <a href="#"
+              onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">Change
+              Location</a>
+          </div>
+
+          <div class="footer-content">
+            <div class="footer-column">
+              <h3>CONTACT US</h3>
+              <ul>
+                <li><a href="Contact.html">SEND A MESSAGE</a></li>
+                <li><a href="Contact.html">BOOK A VIRTUAL APPOINTMENT</a></li>
+              </ul>
+              <div class="social-links">
+                <a href="https://www.instagram.com/harsshdoshi?igsh=MTB1bW05ZTFpeWp5&utm_source=qr">Instagram</a>
+                <a href="https://www.linkedin.com/company/harssh-doshi/">LinkedIn</a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3>COMPANY</h3>
+              <ul>
+                <li><a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a></li>
+                <li><a href="#">FIND A BOUTIQUE</a></li>
+                <li><a href="#">PR <span class="demo_bypass">&</span> PRESS ENQUIRIES</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>LEGAL <span class="demo_bypass">&</span> PRIVACY</h3>
+              <ul>
+                <li><a href="Privacy-Policy.html">PRIVACY POLICY</a></li>
+                <li><a href="Privacy-Policy.html">COOKIE POLICY</a></li>
+              </ul>
+            </div>
+            <div class="footer-logo1">
+              <!-- <img src="assets/footer_icon_1.svg" alt="Harssh Doshi Logo" /> -->
+              <img src="assets/footer_icon_2.svg" alt="Harssh Doshi Logo" />
+
+              <div class="footer-copyright">
+                <span>COPYRIGHT HARSH DOSHI</span>
+                <!-- <a href="#">Site Map</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-location">
+            <span style="font-family: Arpona, sans-serif">SHOP IN: COUNTRY NAME</span>
+            <a href="#">Change Location</a>
+          </div>
+          <div class="footer-copyright">
+            <span>COPYRIGHT HARSH DOSHI 2025</span>
+            <a href="#">Site Map</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <section id="footer-mobile" class="site-footer mobile-only">
+      <!-- Footer -->
+      <footer id="footer" class="site-footer mobile-only">
+        <div class="footer-main">
+          <div class="footer-logo">
+            <!-- <img src="assets/footer-logo.svg" alt="Harssh Doshi Logo" /> -->
+            <img src="assets/hallmark_2026.svg" alt="Harssh Doshi Logo" />
+          </div>
+
+          <div class="footer-location">
+            <span style="font-family: Arpona, sans-serif; cursor: pointer;"
+              onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">SHOP
+              IN:
+              <span class="footerCountryName">COUNTRY NAME</span>
+              <span class="footerCountryCurrency">$/EN</span>
+            </span>
+            <a href="#"
+              onclick="document.getElementById('countrySelectorMenu').classList.toggle('active'); document.body.classList.toggle('country-selector-active');">Change
+              Location</a>
+          </div>
+
+          <div class="footer-content">
+            <div class="footer-column">
+              <h3>CONTACT US</h3>
+              <ul>
+                <li><a href="Contact.html">SEND A MESSAGE</a></li>
+                <li><a href="Contact.html">BOOK A VIRTUAL APPOINTMENT</a></li>
+              </ul>
+              <div class="social-links">
+                <a href="https://www.instagram.com/harsshdoshi?igsh=MTB1bW05ZTFpeWp5&utm_source=qr">Instagram</a>
+                <a href="https://www.linkedin.com/company/harssh-doshi/">LinkedIn</a>
+              </div>
+            </div>
+            <div class="footer-column">
+              <h3>COMPANY</h3>
+              <ul>
+                <li><a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a></li>
+                <li><a href="#">FIND A BOUTIQUE</a></li>
+                <li><a href="#">PR <span class="demo_bypass">&</span> PRESS ENQUIRIES</a></li>
+              </ul>
+            </div>
+            <div class="footer-column">
+              <h3>LEGAL <span class="demo_bypass">&</span> PRIVACY</h3>
+              <ul>
+                <li><a href="Privacy-Policy.html">PRIVACY POLICY</a></li>
+                <li><a href="Privacy-Policy.html">COOKIE POLICY</a></li>
+              </ul>
+            </div>
+            <div class="footer-logo1">
+              <!-- <img src="assets/footer_icon_1.svg" alt="Harssh Doshi Logo" /> -->
+              <img src="assets/footer_icon_2.svg" alt="Harssh Doshi Logo" />
+
+              <div class="footer-copyright">
+                <span>COPYRIGHT HARSH DOSHI</span>
+                <!-- <a href="#">Site Map</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <div class="footer-location">
+            <span style="font-family: Arpona, sans-serif; cursor: pointer;" onclick="toggleCountrySelector()">SHOP IN:
+              COUNTRY NAME</span>
+            <a href="#">Change Location</a>
+          </div>
+          <div class="footer-copyright">
+            <span>COPYRIGHT HARSH DOSHI 2025</span>
+            <a href="#">Site Map</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const header = document.querySelector(".site-header");
+
+      if (window.innerWidth <= 812) {
+        const s = document.createElement('script');
+        s.src = 'script.js';
+        s.async = true;
+        document.head.appendChild(s);
+
+        header.classList.remove('sticky');
+      }
+
+      window.addEventListener("scroll", () => {
+        if (window.innerWidth > 768) {
+          if (window.scrollY > 10) {
+            header.classList.remove('transparent');
+          } else {
+            header.classList.add('transparent');
+          }
+          // header.classList.toggle("transparent", window.scrollY > 0);
+        }
+      });
+    });
+  </script>
+  <script src="world of harsh doshi.js"></script>
+  <script src="header-loader.js"></script>
+  <script src="footer-loader.js"></script>
+  <script src="script.js"></script>
+  <script src="smooth-scroll.js"></script>
+
+  <script src="mailchimp-newsletter.js"></script>$([Environment]::NewLine)
+  <script src="location-popup.js"></script>
+  <script src="cookie-consent.js"></script>
+</body>
+<script>
+  // Fallback function for mobile scrolling
+  window.goToNextSection = function () {
+    // Check if we're on mobile
+    if (window.innerWidth <= 768) {
+      // Mobile: Use normal scrolling
+      const heroSection = document.querySelector('.hero-section');
+      if (heroSection && heroSection.nextElementSibling) {
+        heroSection.nextElementSibling.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else {
+      // Desktop: This should be handled by your smooth scroll script
+      console.log('Desktop scroll handled by smooth scroll script');
+    }
+  };
+</script>
+<script src="config.js"></script>
+
+</html>

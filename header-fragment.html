@@ -1,0 +1,98 @@
+<!-- Sticky header fragment: central source for sticky header used across pages -->
+<div class="sticky-layout">
+  <div class="nav-left">
+    <a href="Love Mirage.html">LOVE MIRAGE</a>
+    <a href="shop.html">JEWELLERY</a>
+  </div>
+  <div class="logo">
+    <a href="index.html" style="color: inherit; text-decoration: none; font-size: 21px;
+      "><span style="white-space: nowrap; font-family: 'custom';">HARSSH DOSHI</span></a>
+  </div>
+  <div class="nav-right">
+    <!-- <div class="nav-item"> -->
+    <a href="WORLD OF HARSSH DOSHI.html">OUR JAGAT</a>
+    <!-- </div> -->
+    <a href="Contact.html">CONTACT</a>
+    <div class="shopping-bag-icon shoppingBagIconFragment" onclick="toggleShoppingBag()">
+      <label style="font-size: 14px; font-family: 'Arpona Regular', sans-serif;">CART<span
+          class="bag-count"></span></label>
+    </div>
+    <a href="account.html" id="accountLink"
+      style="display: none; align-items: center; vertical-align: middle; height: 20px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+    </a>
+    <a href="login.html" id="loginLink"
+      style="display: inline-flex; align-items: center; vertical-align: middle; height: 20px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" style="display: block;">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+    </a>
+
+  </div>
+</div>
+
+<style>
+  .mobile-only-country {
+    display: none;
+  }
+
+  .desktop-only-country {
+    display: unset;
+  }
+
+
+  @media (max-width: 768px) {
+    .mobile-only-country {
+      display: flex !important;
+      flex-direction: column;
+      padding-top: 10%;
+    }
+
+    .desktop-only-country {
+      display: none;
+    }
+  }
+</style>
+
+<!-- Country Selector Menu -->
+<div class="mobile-menu" style="padding-top: 10%;" id="countrySelectorMenu">
+  <!-- Desktop View -->
+  <div class="desktop-only-country" style="width: 85vw; margin-top: 10dvh;">
+    <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+      <h2 style="color: #000; font-size: 28px; font-weight: 500;">
+        COUNTRY SELECTOR
+      </h2>
+      <img class="close-button" src="assets/close.png" alt="Close"
+        onclick="document.getElementById('countrySelectorMenu').classList.remove('active'); document.body.classList.remove('country-selector-active');">
+    </div>
+    <div id="countryAccordionContainerDesktop">
+      <div id="continents" style="width: 40%; padding-right: 10vw;">
+
+      </div>
+      <div id="countries" style="width: 60%; padding: 10px 0;">
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile View -->
+  <div class="mobile-only-country">
+    <img class="close-button" src="assets/close.png" alt="Close"
+      onclick="document.getElementById('countrySelectorMenu').classList.remove('active'); document.body.classList.remove('country-selector-active');">
+
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 0 5vw;"
+      onclick="document.getElementById('countrySelectorMenu').classList.remove('active'); document.body.classList.remove('country-selector-active');">
+      <span style="font-family: Arpona light, sans-serif; color: #000;">Back</span>
+      <p style="color: #000; font-weight: 600;">STORE SELECTOR</p>
+      <span style="opacity: 0;">Back</span>
+    </div>
+
+    <div id="countryAccordionContainer" class="country-accordion"></div>
+  </div>
+</div>

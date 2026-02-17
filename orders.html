@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders - Harssh Doshi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .orders-container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        .orders-header {
+            margin-bottom: 30px;
+        }
+        .orders-header h1 {
+            font-family: 'Arpona', serif;
+        }
+        .order-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .order-id {
+            font-weight: bold;
+        }
+        .order-status {
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        .status-pending {
+            background: #fff3cd;
+            color: #856404;
+        }
+        .status-completed {
+            background: #d4edda;
+            color: #155724;
+        }
+        .order-items {
+            margin: 15px 0;
+        }
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+        .order-total {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        .btn-view {
+            padding: 8px 20px;
+            background: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .no-orders {
+            text-align: center;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="orders-container">
+        <div class="orders-header">
+            <h1>My Orders</h1>
+            <a href="account.html">← Back to Account</a>
+        </div>
+
+        <div id="ordersList">
+            <p>Loading orders...</p>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="config.js"></script>
+    <script src="customer-auth.js"></script>
+    <script src="header-loader.js"></script>
+    <script src="footer-loader.js"></script>
+    <script src="orders.js"></script>
+</body>
+</html>
