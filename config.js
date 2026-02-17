@@ -3,7 +3,8 @@
 // ==============================================
 
 // --- LOCAL DEVELOPMENT (Active) ---
-const BACKEND_URL = "http://localhost:9000";
+// const BACKEND_URL = "http://localhost:9000";
+const BACKEND_URL = "https://harsh-doshi-backend.onrender.com";
 
 // --- LIVE PRODUCTION (Commented Out) ---
 // const BACKEND_URL = "https://admin.harsshdoshi.com";
